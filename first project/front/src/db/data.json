@@ -1,0 +1,551 @@
+{
+  "wishLists": [
+    {
+      "productId": 2,
+      "price": 300,
+      "id": 1
+    }
+  ],
+  "cartLists": [
+    {
+      "productId": 10,
+      "quantity": 1,
+      "price": 35,
+      "id": 1
+    },
+    {
+      "productId": 12,
+      "quantity": 1,
+      "price": 5,
+      "id": 2
+    },
+    {
+      "productId": 35,
+      "quantity": 1,
+      "price": 16,
+      "id": 3
+    }
+  ],
+  "PartyCategories": [
+    {
+      "id": 1,
+      "categoryName": "Christmas"
+    },
+    {
+      "id": 2,
+      "categoryName": "Birthday"
+    },
+    {
+      "id": 3,
+      "categoryName": "Halloween"
+    },
+    {
+      "id": 4,
+      "categoryName": "Anniversaries"
+    },
+    {
+      "id": 4,
+      "categoryName": "Babyshower"
+    }
+  ],
+  "ProductsCategories": [
+    {
+      "id": 1,
+      "categoryName": "Ballons"
+    },
+    {
+      "id": 2,
+      "categoryName": "Hanging"
+    },
+    {
+      "id": 3,
+      "categoryName": "Coustume"
+    },
+    {
+      "id": 4,
+      "categoryName": "Tableware"
+    },
+    {
+      "id": 5,
+      "categoryName": "Decoration"
+    }
+  ],
+  "colors": [
+    {
+      "id": 1,
+      "colorName": "Red"
+    },
+    {
+      "id": 2,
+      "colorName": "White"
+    },
+    {
+      "id": 3,
+      "colorName": "Gold"
+    },
+    {
+      "id": 4,
+      "colorName": "Silver"
+    },
+    {
+      "id": 5,
+      "colorName": "Green"
+    },
+    {
+      "id": 6,
+      "colorName": "Beige"
+    },
+    {
+      "id": 7,
+      "colorName": "Pastel"
+    }
+  ],
+  "sizes": [
+    {
+      "id": 1,
+      "sizeName": "S"
+    },
+    {
+      "id": 2,
+      "sizeName": "M"
+    },
+    {
+      "id": 3,
+      "sizeName": "L"
+    }
+  ],
+  "gender": [
+    {
+      "id": 1,
+      "genderName": "Women"
+    },
+    {
+      "id": 2,
+      "genderName": "Men"
+    },
+    {
+      "id": 3,
+      "sizeName": "Dog"
+    }
+  ],
+  "ages": [
+    {
+      "id": 1,
+      "ageName": "Baby"
+    },
+    {
+      "id": 2,
+      "ageName": "Kid"
+    },
+    {
+      "id": 3,
+      "ageName": "Adult"
+    }
+  ],
+  "Themes": [
+    {
+      "id": 1,
+      "themeName": "Unicorn"
+    },
+    {
+      "id": 2,
+      "themeName": "Nordic"
+    },
+    {
+      "id": 3,
+      "themeName": "Outdoor"
+    },
+    {
+      "id": 4,
+      "themeName": "Family"
+    },
+    {
+      "id": 5,
+      "themeName": "Princess"
+    }
+  ],
+  "ProductList": [
+    {
+      "id": 1,
+      "productId": 1,
+      "colorId": 1
+    },
+    {
+      "id": 2,
+      "productId": 2,
+      "colorId": 5
+    },
+    {
+      "id": 3,
+      "productId": 3,
+      "colorId": 1
+    },
+    {
+      "id": 4,
+      "productId": 4,
+      "colorId": 3
+    },
+    {
+      "id": 5,
+      "productId": 5,
+      "colorId": 3
+    },
+    {
+      "id": 6,
+      "productId": 6,
+      "colorId": 2
+    },
+    {
+      "id": 7,
+      "productId": 7,
+      "colorId": 1
+    },
+    {
+      "id": 8,
+      "productId": 8,
+      "colorId": 1
+    }
+  ],
+  "ShopProductList": [
+    {
+      "id": 1,
+      "productId": 1
+    },
+    {
+      "id": 2,
+      "productId": 2
+    },
+    {
+      "id": 3,
+      "productId": 3
+    },
+    {
+      "id": 4,
+      "productId": 4
+    },
+    {
+      "id": 5,
+      "productId": 5
+    },
+    {
+      "id": 6,
+      "productId": 6
+    },
+    {
+      "id": 7,
+      "productId": 7
+    },
+    {
+      "id": 8,
+      "productId": 8
+    }
+  ],
+  "SaleProductList": [
+    {
+      "id": 1,
+      "productId": 9
+    },
+    {
+      "id": 2,
+      "productId": 10
+    },
+    {
+      "id": 3,
+      "productId": 11
+    },
+    {
+      "id": 4,
+      "productId": 12
+    },
+    {
+      "id": 5,
+      "productId": 13
+    },
+    {
+      "id": 6,
+      "productId": 14
+    },
+    {
+      "id": 7,
+      "productId": 15
+    },
+    {
+      "id": 8,
+      "productId": 16
+    },
+    {
+      "id": 9,
+      "productId": 17
+    },
+    {
+      "id": 10,
+      "productId": 18
+    },
+    {
+      "id": 11,
+      "productId": 19
+    },
+    {
+      "id": 12,
+      "productId": 20
+    },
+    {
+      "id": 13,
+      "productId": 21
+    },
+    {
+      "id": 14,
+      "productId": 22
+    },
+    {
+      "id": 15,
+      "productId": 23
+    },
+    {
+      "id": 16,
+      "productId": 24
+    }
+  ],
+  "BirthProductList": [
+    {
+      "id": 1,
+      "productId": 25,
+      "colorId": 2
+    },
+    {
+      "id": 2,
+      "productId": 26,
+      "colorId": 3
+    },
+    {
+      "id": 3,
+      "productId": 27,
+      "colorId": 4
+    },
+    {
+      "id": 4,
+      "productId": 28,
+      "colorId": 2
+    },
+    {
+      "id": 5,
+      "productId": 29,
+      "colorId": 1
+    },
+    {
+      "id": 6,
+      "productId": 30,
+      "colorId": 2
+    },
+    {
+      "id": 7,
+      "productId": 31,
+      "colorId": 5
+    },
+    {
+      "id": 8,
+      "productId": 32,
+      "colorId": 3
+    }
+  ],
+  "BallonProductList": [
+    {
+      "id": 1,
+      "productId": 33,
+      "colorId": 2
+    },
+    {
+      "id": 2,
+      "productId": 34,
+      "colorId": 5
+    },
+    {
+      "id": 3,
+      "productId": 35,
+      "colorId": 2
+    },
+    {
+      "id": 4,
+      "productId": 36,
+      "colorId": 3
+    },
+    {
+      "id": 5,
+      "productId": 37,
+      "colorId": 1
+    },
+    {
+      "id": 6,
+      "productId": 38,
+      "colorId": 5
+    },
+    {
+      "id": 7,
+      "productId": 39,
+      "colorId": 2
+    },
+    {
+      "id": 8,
+      "productId": 40,
+      "colorId": 1
+    },
+    {
+      "id": 9,
+      "productId": 49,
+      "colorId": 3
+    },
+    {
+      "id": 10,
+      "productId": 50,
+      "colorId": 3
+    },
+    {
+      "id": 11,
+      "productId": 51,
+      "colorId": 3
+    },
+    {
+      "id": 12,
+      "productId": 52,
+      "colorId": 3
+    },
+    {
+      "id": 13,
+      "productId": 53,
+      "colorId": 3
+    },
+    {
+      "id": 14,
+      "productId": 54,
+      "colorId": 3
+    },
+    {
+      "id": 15,
+      "productId": 55,
+      "colorId": 3
+    },
+    {
+      "id": 16,
+      "productId": 56,
+      "colorId": 3
+    }
+  ],
+  "UnicornProductList": [
+    {
+      "id": 1,
+      "productId": 41,
+      "colorId": 3
+    },
+    {
+      "id": 2,
+      "productId": 42,
+      "colorId": 2
+    },
+    {
+      "id": 3,
+      "productId": 43,
+      "colorId": 3
+    },
+    {
+      "id": 4,
+      "productId": 44,
+      "colorId": 3
+    },
+    {
+      "id": 5,
+      "productId": 45,
+      "colorId": 3
+    },
+    {
+      "id": 6,
+      "productId": 46,
+      "colorId": 3
+    },
+    {
+      "id": 7,
+      "productId": 47,
+      "colorId": 2
+    },
+    {
+      "id": 8,
+      "productId": 48,
+      "colorId": 3
+    }
+  ],
+  "HalloweenProductList": [
+    {
+      "id": 1,
+      "productId": 100
+    },
+    {
+      "id": 2,
+      "productId": 101
+    },
+    {
+      "id": 3,
+      "productId": 102
+    },
+    {
+      "id": 4,
+      "productId": 103
+    },
+    {
+      "id": 5,
+      "productId": 104
+    },
+    {
+      "id": 6,
+      "productId": 105
+    },
+    {
+      "id": 7,
+      "productId": 106
+    },
+    {
+      "id": 8,
+      "productId": 107
+    }
+  ],
+  "GoldProductList": [
+    {
+      "id": 1,
+      "productId": 49,
+      "colorId": 3
+    },
+    {
+      "id": 2,
+      "productId": 50,
+      "colorId": 3
+    },
+    {
+      "id": 3,
+      "productId": 51,
+      "colorId": 3
+    },
+    {
+      "id": 4,
+      "productId": 52,
+      "colorId": 3
+    },
+    {
+      "id": 5,
+      "productId": 53,
+      "colorId": 3
+    },
+    {
+      "id": 6,
+      "productId": 54,
+      "colorId": 3
+    },
+    {
+      "id": 7,
+      "productId": 55,
+      "colorId": 3
+    },
+    {
+      "id": 8,
+      "productId": 56,
+      "colorId": 3
+    }
+  ]
+}

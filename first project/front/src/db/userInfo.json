@@ -1,0 +1,30 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "userName": "",
+      "emailAddress": "",
+      "password": ""
+    },
+    {
+      "userid": "",
+      "userEmail": "",
+      "password": "",
+      "id": 2
+    }
+  ],
+
+    "shipDetails": [
+    {
+      "id": 1,
+      "detailId": 1,
+      "country": "",
+      "name": "",
+      "arrivalName": "",
+      "address": "",
+      "addressMore": "",
+      "phoneNumber": "",
+      "shipMemo": ""
+    }
+  ]
+}
