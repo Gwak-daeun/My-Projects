@@ -1,0 +1,13 @@
+#calendar{
+    width: 100px;
+    height: 300px;
+}
+
+
+#myInfo{
+    float: left;
+}
+
+#div1{
+    overflow: hidden;
+}
