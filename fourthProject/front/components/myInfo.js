@@ -28,19 +28,11 @@ const MyInfo = () => {
 
   const [read, setRead] = useState(true);
 
-  // const [text, onChangeText, setText] = useInput('');
-
-  const [myText, setMyText] = useState(me.info);
+  const [myText, setMyText] = useState(me.info || '');
     
   const onChangeMyText = useCallback((e) => {
-      const value = e.target.value;
-      setMyText((myText) => {
-        if (typeof value === 'object') {
-          return JSON.stringify(value);
-        } else {
-          return value;
-        }
-      });
+    const myText = e.target.value;
+    setMyText(myText);
     }, []);
 
   const imageInput = useRef(); 
@@ -85,9 +77,6 @@ const onChangeImages = useCallback((e) => {
 
 //유저 정보 수정 요청
 const onSubmit = useCallback(() => {
-  // if(!text || !text.trim()){
-  //     return alert('자기소개를 작성하세요.');
-  // }
   const formData = new FormData();
   
       formData.append('profile', imagePaths);
@@ -98,16 +87,12 @@ const onSubmit = useCallback(() => {
       type: CHANGE_INFO_REQUEST,
       data: formData,
    }
-  //  , Router.reload()
-
    );
 },[myText, imagePaths]);
 
 const cancelFix = useCallback(() => {
   setRead((prev) => !prev);
 });
-
-// console.log("me:::" +JSON.stringify(me));
 
     return(
         <div>

@@ -89,12 +89,6 @@ const originalImage = `https://static.vecteezy.com/system/resources/previews/002
               renderItem={(items) => (
                 <List.Item>
                   <One>
-                  {/* <Card 
-                    title={<a href={`http://localhost:3000/user/${items.id}`} >{items.nickname}</a>}
-                    cover={<a href={`http://localhost:3000/user/${items.id}`} ><One><img className='img1' alt="example" src={items.Image.src === originalImage ? originalImage : `http://localhost:3065/${items.Image.src}`} /></One></a>}
-                    className='card2'
-                  >
-                  </Card> */}
                   <a href={`http://localhost:3000/user/${items.id}`} >
                     <Avatar size={100} src={items.Image.src === originalImage ? originalImage : `http://localhost:3065/${items.Image.src}`} />
                   </a>

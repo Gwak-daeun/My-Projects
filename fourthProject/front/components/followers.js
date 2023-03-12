@@ -33,8 +33,6 @@ const Followers = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  console.log("팔로워리스트", me);
-
   const referModal = () => {
     setIsModalOpen(true);
   };

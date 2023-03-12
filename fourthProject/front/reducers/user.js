@@ -113,16 +113,6 @@ export const UPLOAD_PROFILE_IMAGE_FAILURE = 'UPLOAD_PROFILE_IMAGE_FAILURE';
 export const ADD_POST_TO_ME = 'ADD_POST_TO_ME';
 export const REMOVE_POST_OF_ME = 'REMOVE_POST_OF_ME';
 
-const dummyUser = (data) => ({
-    ...data,
-    nickname: '제로초',
-    id: 1,
-    Posts: [{id: 1}],
-    Followings: [{nickname: '부기초'}, {nickname: 'Chanho Lee'}, {nickname: 'neue zeal'}],
-    Followers: [{nickname: '부기초'}, {nickname: 'Chanho Lee'}, {nickname: 'neue zeal'}]
-});
-
-
 export const loginRequestAction = (data) => {
     return{
         type: LOG_IN_REQUEST,
@@ -135,10 +125,7 @@ export const logoutRequestAction = (data) => {
         type: LOG_OUT_REQUEST
     }
 };
-
-
-//draft를 바꾸면 immer가 state를 불변성 있게 알아서 바꿔줌      
-                                            //화살표가 return 역할을 대신함.                                 
+                                
 const reducer = (state = initialState, action) => produce(state, (draft) => {
   switch (action.type) {
     case LOAD_USER_REQUEST:

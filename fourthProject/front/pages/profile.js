@@ -12,6 +12,10 @@ import { CHECK_DATE_REQUEST } from "../reducers/post";
 import DateCellRender from "../util/dateCellRender";
 import styled from "styled-components";
 import  Router  from "next/router";
+import wrapper from "../store/configureStore";
+import axios from "axios";
+import { LOAD_MY_INFO_REQUEST } from "../reducers/user";
+import { END } from "redux-saga";
 
 const OneProfile = styled.div`
 
@@ -123,5 +127,19 @@ console.log(todayDateString);
 
  );
 };
+
+export const getServerSideProps = wrapper.getServerSideProps(async(context) => { 
+    
+    const cookie = context.req ? context.req.headers.cookie : '';
+    axios.defaults.headers.Cookie = ''; 
+    if(context.req && cookie){ 
+        axios.defaults.headers.Cookie = cookie;
+    }
+    context.store.dispatch({
+        type: LOAD_MY_INFO_REQUEST
+    });
+   context.store.dispatch(END);
+   await context.store.sagaTask.toPromise();
+});
 
 export default Profile;

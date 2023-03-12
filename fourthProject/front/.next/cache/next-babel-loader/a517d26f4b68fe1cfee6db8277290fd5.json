@@ -1,1 +1,0 @@
-{"ast":null,"code":"import { enableES5, produce } from 'immer';\nexport default (function () {\n  enableES5();\n  return produce.apply(void 0, arguments);\n});\n//인터넷 익스플로러에서 이머가 작동을 안해서 설정을 해줘야 함.","map":null,"metadata":{},"sourceType":"module"}

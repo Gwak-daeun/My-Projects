@@ -151,17 +151,15 @@ module.exports = require("redux-saga");
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("YFqc");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _hooks_useInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("3zrx");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("4Q3z");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__("h74D");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__("LAVF");
-/* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__("p+NB");
-/* harmony import */ var antd_lib_layout_layout__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__("Vn7o");
-/* harmony import */ var antd_lib_layout_layout__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(antd_lib_layout_layout__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("4Q3z");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("h74D");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__("LAVF");
+/* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__("p+NB");
+/* harmony import */ var antd_lib_layout_layout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__("Vn7o");
+/* harmony import */ var antd_lib_layout_layout__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(antd_lib_layout_layout__WEBPACK_IMPORTED_MODULE_7__);
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -173,14 +171,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const AppLayout = ({
   children
 }) => {
-  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_5__["useDispatch"])();
+  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useDispatch"])();
   const {
     me,
     logOutLoading
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_5__["useSelector"])(state => state.user);
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useSelector"])(state => state.user);
   const {
     keywords
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_5__["useSelector"])(state => state.post);
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useSelector"])(state => state.post);
   const resultWords = keywords === null || keywords === void 0 ? void 0 : keywords.map(items => ({
     value: items.name
   }));
@@ -193,16 +191,16 @@ const AppLayout = ({
     const value = e.target.value;
     setSearchInput(value);
     dispatch({
-      type: _reducers_post__WEBPACK_IMPORTED_MODULE_7__[/* SEARCH_KEYWORD_REQUEST */ "P"],
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_6__[/* SEARCH_KEYWORD_REQUEST */ "P"],
       data: value
     });
   }, [dispatch]);
   const onSearch = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(() => {
-    next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push(`/hashtag/${searchInput}`);
+    next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push(`/hashtag/${searchInput}`);
   }, [searchInput]);
   const onLogOut = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(() => {
-    dispatch(Object(_reducers_user__WEBPACK_IMPORTED_MODULE_6__[/* logoutRequestAction */ "Q"])());
-    next_router__WEBPACK_IMPORTED_MODULE_4___default.a.replace(`/`);
+    dispatch(Object(_reducers_user__WEBPACK_IMPORTED_MODULE_5__[/* logoutRequestAction */ "Q"])());
+    next_router__WEBPACK_IMPORTED_MODULE_3___default.a.replace(`/`);
   }, []);
   const handleSelect = value => {
     setSearchInput(value);
@@ -251,7 +249,7 @@ const AppLayout = ({
   }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
     xs: 24,
     md: 12
-  }, children)), __jsx(antd_lib_layout_layout__WEBPACK_IMPORTED_MODULE_8__["Footer"], {
+  }, children)), __jsx(antd_lib_layout_layout__WEBPACK_IMPORTED_MODULE_7__["Footer"], {
     className: "footer"
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Descriptions"], {
     title: "Info"
@@ -1426,9 +1424,6 @@ module.exports = require("next-redux-wrapper");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("zr5I");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _util_produce__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("ionj");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 const initialState = {
@@ -1534,27 +1529,6 @@ const UPLOAD_PROFILE_IMAGE_SUCCESS = 'UPLOAD_PROFILE_IMAGE_SUCCESS';
 const UPLOAD_PROFILE_IMAGE_FAILURE = 'UPLOAD_PROFILE_IMAGE_FAILURE';
 const ADD_POST_TO_ME = 'ADD_POST_TO_ME';
 const REMOVE_POST_OF_ME = 'REMOVE_POST_OF_ME';
-const dummyUser = data => _objectSpread(_objectSpread({}, data), {}, {
-  nickname: '제로초',
-  id: 1,
-  Posts: [{
-    id: 1
-  }],
-  Followings: [{
-    nickname: '부기초'
-  }, {
-    nickname: 'Chanho Lee'
-  }, {
-    nickname: 'neue zeal'
-  }],
-  Followers: [{
-    nickname: '부기초'
-  }, {
-    nickname: 'Chanho Lee'
-  }, {
-    nickname: 'neue zeal'
-  }]
-});
 const loginRequestAction = data => {
   return {
     type: LOG_IN_REQUEST,
@@ -1566,9 +1540,6 @@ const logoutRequestAction = data => {
     type: LOG_OUT_REQUEST
   };
 };
-
-//draft를 바꾸면 immer가 state를 불변성 있게 알아서 바꿔줌      
-//화살표가 return 역할을 대신함.                                 
 const reducer = (state = initialState, action) => Object(_util_produce__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(state, draft => {
   switch (action.type) {
     case LOAD_USER_REQUEST:
@@ -1993,6 +1964,9 @@ module.exports = require("antd/lib/layout/layout");
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, "getServerSideProps", function() { return /* binding */ getServerSideProps; });
+
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__("cDcd");
 var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_);
@@ -2044,22 +2018,13 @@ const MyInfo = () => {
     0: read,
     1: setRead
   } = Object(external_react_["useState"])(true);
-
-  // const [text, onChangeText, setText] = useInput('');
-
   const {
     0: myText,
     1: setMyText
-  } = Object(external_react_["useState"])(me.info);
+  } = Object(external_react_["useState"])(me.info || '');
   const onChangeMyText = Object(external_react_["useCallback"])(e => {
-    const value = e.target.value;
-    setMyText(myText => {
-      if (typeof value === 'object') {
-        return JSON.stringify(value);
-      } else {
-        return value;
-      }
-    });
+    const myText = e.target.value;
+    setMyText(myText);
   }, []);
   const imageInput = Object(external_react_["useRef"])();
   Object(external_react_["useEffect"])(() => {
@@ -2097,9 +2062,6 @@ const MyInfo = () => {
 
   //유저 정보 수정 요청
   const onSubmit = Object(external_react_["useCallback"])(() => {
-    // if(!text || !text.trim()){
-    //     return alert('자기소개를 작성하세요.');
-    // }
     const formData = new FormData();
     formData.append('profile', imagePaths);
     formData.append('info', myText);
@@ -2107,16 +2069,11 @@ const MyInfo = () => {
     dispatch({
       type: user["b" /* CHANGE_INFO_REQUEST */],
       data: formData
-    }
-    //  , Router.reload()
-    );
+    });
   }, [myText, imagePaths]);
   const cancelFix = Object(external_react_["useCallback"])(() => {
     setRead(prev => !prev);
   });
-
-  // console.log("me:::" +JSON.stringify(me));
-
   return __jsx("div", null, __jsx(OneMyInfo, null, __jsx(external_antd_["Form"], {
     encType: "multipart/form-data",
     onFinish: onSubmit
@@ -2208,7 +2165,6 @@ const Mention = () => {
     0: isModalOpen,
     1: setIsModalOpen
   } = Object(external_react_["useState"])(false);
-  console.log("인용리스트", me);
   const referModal = () => {
     setIsModalOpen(true);
   };
@@ -2394,7 +2350,6 @@ const Followers = () => {
     0: isModalOpen,
     1: setIsModalOpen
   } = Object(external_react_["useState"])(false);
-  console.log("팔로워리스트", me);
   const referModal = () => {
     setIsModalOpen(true);
   };
@@ -2648,8 +2603,22 @@ const DateCellRender = value => {
   }))));
 };
 /* harmony default export */ var dateCellRender = (DateCellRender);
+// EXTERNAL MODULE: ./store/configureStore.js + 4 modules
+var configureStore = __webpack_require__("AQn3");
+
+// EXTERNAL MODULE: external "axios"
+var external_axios_ = __webpack_require__("zr5I");
+var external_axios_default = /*#__PURE__*/__webpack_require__.n(external_axios_);
+
+// EXTERNAL MODULE: external "redux-saga"
+var external_redux_saga_ = __webpack_require__("1fKG");
+
 // CONCATENATED MODULE: ./pages/profile.js
 var profile_jsx = external_react_default.a.createElement;
+
+
+
+
 
 
 
@@ -2730,6 +2699,18 @@ const Profile = () => {
     className: "row1"
   }, profile_jsx(followers, null), profile_jsx(followings, null)))));
 };
+const getServerSideProps = configureStore["a" /* default */].getServerSideProps(async context => {
+  const cookie = context.req ? context.req.headers.cookie : '';
+  external_axios_default.a.defaults.headers.Cookie = '';
+  if (context.req && cookie) {
+    external_axios_default.a.defaults.headers.Cookie = cookie;
+  }
+  context.store.dispatch({
+    type: user["n" /* LOAD_MY_INFO_REQUEST */]
+  });
+  context.store.dispatch(external_redux_saga_["END"]);
+  await context.store.sagaTask.toPromise();
+});
 /* harmony default export */ var profile = __webpack_exports__["default"] = (Profile);
 
 /***/ }),

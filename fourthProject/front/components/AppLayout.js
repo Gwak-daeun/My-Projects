@@ -1,7 +1,6 @@
 import React, { useCallback, useState } from "react";
 import {Input, Menu, Row, Col, Button, Tooltip, AutoComplete, Descriptions} from 'antd';
 import Link from 'next/link';
-import useInput from "../hooks/useInput";
 import Router from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutRequestAction } from "../reducers/user";

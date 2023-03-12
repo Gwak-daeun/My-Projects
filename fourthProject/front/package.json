@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
-    "build": "next build"
+    "build": "cross-env ANALYZE=true NODE_ENV=production next build",
+    "start": "cross-env NODE_ENV=production next start"
   },
   "author": "GwakDaeun",
   "license": "ISC",
@@ -21,9 +22,11 @@
     "@fullcalendar/interaction": "^5.11.3",
     "@fullcalendar/react": "^5.11.3",
     "@fullcalendar/timegrid": "^5.11.3",
+    "@next/bundle-analyzer": "^13.2.4",
     "antd": "^4.24.8",
     "axios": "^1.3.4",
     "bootstrap": "^5.2.3",
+    "cross-env": "^7.0.3",
     "immer": "^9.0.19",
     "next": "^9.5.5",
     "next-redux-wrapper": "^6.0.2",

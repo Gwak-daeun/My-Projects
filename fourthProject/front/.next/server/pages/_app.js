@@ -1013,9 +1013,6 @@ module.exports = require("next-redux-wrapper");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("zr5I");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _util_produce__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("ionj");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 const initialState = {
@@ -1121,27 +1118,6 @@ const UPLOAD_PROFILE_IMAGE_SUCCESS = 'UPLOAD_PROFILE_IMAGE_SUCCESS';
 const UPLOAD_PROFILE_IMAGE_FAILURE = 'UPLOAD_PROFILE_IMAGE_FAILURE';
 const ADD_POST_TO_ME = 'ADD_POST_TO_ME';
 const REMOVE_POST_OF_ME = 'REMOVE_POST_OF_ME';
-const dummyUser = data => _objectSpread(_objectSpread({}, data), {}, {
-  nickname: '제로초',
-  id: 1,
-  Posts: [{
-    id: 1
-  }],
-  Followings: [{
-    nickname: '부기초'
-  }, {
-    nickname: 'Chanho Lee'
-  }, {
-    nickname: 'neue zeal'
-  }],
-  Followers: [{
-    nickname: '부기초'
-  }, {
-    nickname: 'Chanho Lee'
-  }, {
-    nickname: 'neue zeal'
-  }]
-});
 const loginRequestAction = data => {
   return {
     type: LOG_IN_REQUEST,
@@ -1153,9 +1129,6 @@ const logoutRequestAction = data => {
     type: LOG_OUT_REQUEST
   };
 };
-
-//draft를 바꾸면 immer가 state를 불변성 있게 알아서 바꿔줌      
-//화살표가 return 역할을 대신함.                                 
 const reducer = (state = initialState, action) => Object(_util_produce__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(state, draft => {
   switch (action.type) {
     case LOAD_USER_REQUEST:
