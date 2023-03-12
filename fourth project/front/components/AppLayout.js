@@ -95,19 +95,14 @@ const AppLayout = ({children}) => {
                 <Col xs={24} md={12}>{children}</Col>
             </Row>
             <Footer
-            style={{
-                textAlign: 'center',
-                marginTop: '50px',
-                fontSize: '20px'
-              }}
+            className="footer"
             >
-<Descriptions title="Info">
-    <Descriptions.Item label="개발자">곽다은</Descriptions.Item>
-    <Descriptions.Item label="연락처">010 - 3384 - 2874</Descriptions.Item>
-    <Descriptions.Item label="E-mail">bbibibbibi22@gmail.com</Descriptions.Item>
-    <Descriptions.Item label="Git-Hub">empty</Descriptions.Item>
-    <Descriptions.Item label="Notion"><a target='_blank' href="https://knowing-yogurt-cd2.notion.site/3dbeb300ba74486689474100d5c98971">개발자의 Notion</a></Descriptions.Item>
-</Descriptions>
+                <Descriptions title="Info">
+                    <Descriptions.Item label="개발자">곽다은</Descriptions.Item>
+                    <Descriptions.Item label="연락처">010 - 3384 - 2874</Descriptions.Item>
+                    <Descriptions.Item label="Git-Hub"><a target='_blank' href="https://github.com/Gwak-daeun/fashionary.git">Source code</a></Descriptions.Item>
+                    <Descriptions.Item label="이력서"><a target='_blank' href="https://knowing-yogurt-cd2.notion.site/3dbeb300ba74486689474100d5c98971">개발자의 Notion</a></Descriptions.Item>
+                </Descriptions>
             </Footer>
         </div>
     );

@@ -53,9 +53,9 @@ const Profile = () => {
     const {me} = useSelector((state) => state.user);
 
     const today = new Date();
-const year = today.getFullYear(); // 년도
-const month = today.getMonth() + 1; // 월
-const date = today.getDate(); // 날짜
+    const year = today.getFullYear(); // 년도
+    const month = today.getMonth() + 1; // 월
+    const date = today.getDate(); // 날짜
 
 // 월, 날짜가 10보다 작으면 앞에 0을 붙여주기
 const formattedMonth = month < 10 ? `0${month}` : month;
@@ -80,6 +80,12 @@ console.log(todayDateString);
     });
 
     useEffect(() => {
+
+        if(!(me && me.id)) {
+            alert("로그인 후 이용 가능합니다.");
+            Router.push('/');
+        }
+
         if(checkDateError){
             window.alert(checkDateError);
             window.location.reload();
@@ -87,7 +93,7 @@ console.log(todayDateString);
         if(checkDateDone === true){
             Router.push(`/newLook`);
         }
-    }, [checkDateError, checkDateDone]);
+    }, [checkDateError, checkDateDone, me && me.id]);
 
  return(
     <OneProfile>

@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from "react";
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Card, Checkbox, Form, Input } from 'antd';
+import { Button, Card, Checkbox, Form, Input, Col } from 'antd';
 import { useDispatch, useSelector } from "react-redux";
 import useInput from '../hooks/useInput';
 import { loginRequestAction } from "../reducers/user";
@@ -13,20 +13,22 @@ const OneLogin = styled.div`
     width: 60%;
     margin: auto;
     margin-top: 300px;
+    margin-bottom: 300px;
   }
   .login-form{
     width: 50%;
-    text-align : center;
     margin: auto;
+    padding-top: 30px;
   }
-
   .login-form-button{
     background-color: black;
     color: white;
   }
-
   .a1{
     color: black;
+  }
+  .col1{
+    text-align : center;
   }
 
 `;
@@ -59,6 +61,8 @@ const Login = () => {
     return(
       <OneLogin>
         <Card className="card1">
+          <Col className="col1">
+          <h1 >Log in</h1>
           <Form
           name="normal_login"
           className="login-form"
@@ -89,9 +93,10 @@ const Login = () => {
               <br />
               Or 
               <br />
-              <a href="./signup" className="a1">회원가입 하러 가기</a>
+              <a href="./signup" className="a1"><h3>회원가입 하러 가기</h3></a>
             </Form.Item>
           </Form>
+          </Col>
         </Card>
       </OneLogin>
     );

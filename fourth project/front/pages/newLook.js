@@ -119,6 +119,8 @@ const NewLook = () => {
 
     const {imagePaths, addPostDone, mainPosts, newLookKeywords} = useSelector((state) => state.post);
 
+    const {me} = useSelector((state) => state.user);
+
     const [previewImg, setPreviewImg] = useState(null);
 
     const words = newLookKeywords?.map(items => ({value: items.name}));
@@ -127,6 +129,11 @@ const NewLook = () => {
 
     useEffect(() => {
 
+        if(!(me && me.id)) {
+            alert("로그인 후 이용 가능합니다.");
+            Router.push('/');
+        }
+
         if(addPostDone === true){
             Router.replace('/');
         }  
@@ -134,7 +141,7 @@ const NewLook = () => {
             type: LOAD_NEW_POSTS_REQUEST
         });
 
-    }, [addPostDone]);
+    }, [addPostDone, me && me.id]);
 
     console.log("메인포스트: ", mainPosts);
 

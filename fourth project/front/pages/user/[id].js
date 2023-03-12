@@ -1,10 +1,9 @@
-import { Button, Calendar, Card, Row } from "antd";
+import { Calendar, Card, Row } from "antd";
 import {  useRouter } from "next/router";
+import Router from "next/router";
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import AppLayout from "../../components/AppLayout";
-import Followers from "../../components/followers";
-import Followings from "../../components/followings";
 import UserDateCellRender from "../../components/userComponent/userDateCellRender";
 import UserInfo from "../../components/userComponent/userInfo";
 import UserLikeList from "../../components/userComponent/userLikeList";
@@ -48,11 +47,18 @@ const User = () => {
 
     const {userInfo, me} = useSelector((state) => state.user);
 
-    //다른 유저 프로필로 이동 시, 접속 중인 아이디와 같은지 비교 후 같다면 홈화면으로 이동
+    
     useEffect(() => {
+    //다른 유저 프로필로 이동 시, 접속 중인 아이디와 같은지 비교 후 같다면 홈화면으로 이동
         if(id == me.id){
-            router.replace('/');
+            Router.replace('/');
         }
+        if(!(me && me.id)) {
+            alert("로그인 후 이용 가능합니다.");
+            Router.push('/');
+        }
+
+
     }, []);
 
     return(

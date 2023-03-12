@@ -124,7 +124,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_css_calendar_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_pages_css_calendar_css__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _pages_css_applayout_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../pages/css/applayout.css */ "./pages/css/applayout.css");
 /* harmony import */ var _pages_css_applayout_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_pages_css_applayout_css__WEBPACK_IMPORTED_MODULE_5__);
-var _jsxFileName = "C:\\Users\\\uB0B4\uCEF4\\Desktop\\fashionary\\front\\pages\\_app.js";
+var _jsxFileName = "C:\\Users\\\uB0B4\uCEF4\\Documents\\GitHub\\My-Projects\\fourth project\\front\\pages\\_app.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 

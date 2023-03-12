@@ -1,5 +1,6 @@
 import axios from "axios";
-import { useRouter } from "next/router";
+import { Router, useRouter } from "next/router";
+import Router from "next/router";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { END } from "redux-saga";
@@ -36,6 +37,10 @@ const Hashtag = () => {
     const { mainPosts, hasMorePosts, loadHashtagPostsLoading } = useSelector((state) => state.post);
     
     useEffect(() => {
+      if(!(me && me.id)) {
+        alert("로그인 후 이용 가능합니다.");
+        Router.push('/');
+    }
         const onScroll = () => {
           if (window.pageYOffset + document.documentElement.clientHeight > document.documentElement.scrollHeight - 300) {
             if (hasMorePosts && !loadHashtagPostsLoading) {

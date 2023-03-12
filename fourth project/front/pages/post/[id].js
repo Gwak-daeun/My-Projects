@@ -141,6 +141,10 @@ const Post = () => {
     const [rtConent, onChangeRtContent, setRtContent] = useInput('');
 
     useEffect(() => {
+        if(!(me && me.id)) {
+            alert("로그인 후 이용 가능합니다.");
+            Router.push('/');
+        }
         //로그인 아이디와 게시글 아이디가 같으면 수정, 삭제 활성화
         if(me.id === singlePost.UserId){
             setRead(false);

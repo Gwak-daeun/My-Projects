@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Card, Checkbox, Form, Input } from 'antd';
+import { Button, Card, Checkbox, Col, Form, Input } from 'antd';
 import useInput from "../hooks/useInput";
 import AppLayout from "../components/AppLayout";
 import styled from 'styled-components';
@@ -18,15 +18,18 @@ const OneMyInfo = styled.div`
     width: 60%;
     margin: auto;
     margin-top: 200px;
+    margin-bottom: 300px;
   }
   .form1{
     width: 50%;
-    text-align : center;
     margin: auto;
   }
   .login-form-button{
     background-color: black;
     color: white;
+  }
+  .col1{
+    text-align : center;
   }
 `;
 
@@ -89,75 +92,77 @@ useEffect(() => {
 return(
   <AppLayout>
     <OneMyInfo>
-     <Head>
-            <title>회원가입</title>
-      </Head>
+      <Col className="col1">
+        <Head>
+              <title>회원가입</title>
+        </Head>
 
-    <Card className="card1">
-    
-    <Form
-    name="normal_login"
-    className="form1"
-    initialValues={{remember: true,}}
-    onFinish={onSubmit}
-  >
-    <Form.Item
-      name="username"
-    >
-      <label htmlFor='name'>닉네임</label>
-      <Input prefix={<UserOutlined className="site-form-item-icon" />} 
-      name="name"
-      placeholder="Username" 
-      value={nickname} 
-      onChange={onChangeNickname}
-      required
-      />
-    </Form.Item>
-    <Form.Item
-      name="password"
-    >
-      <label htmlFor='password'>비밀번호</label>
-      <Input
-        prefix={<LockOutlined className="site-form-item-icon" />}
-        name="password"
-        placeholder="Password"
-        value={password} 
-        type="password"
-        onChange={onChangePassword}
-        required
-      />
-    </Form.Item>
+        <Card className="card1">
+        <h1 >Sign up</h1>
+          <Form
+          name="normal_login"
+          className="form1"
+          initialValues={{remember: true,}}
+          onFinish={onSubmit}
+          >
+            <Form.Item
+            name="username"
+            >
+              <label htmlFor='name'>닉네임</label>
+              <Input prefix={<UserOutlined className="site-form-item-icon" />} 
+              name="name"
+              placeholder="Username" 
+              value={nickname} 
+              onChange={onChangeNickname}
+              required
+              />
+            </Form.Item>
+            <Form.Item
+            name="password"
+            >
+              <label htmlFor='password'>비밀번호</label>
+              <Input
+              prefix={<LockOutlined className="site-form-item-icon" />}
+              name="password"
+              placeholder="Password"
+              value={password} 
+              type="password"
+              onChange={onChangePassword}
+              required
+              />
+            </Form.Item>
 
-    <Form.Item>
-    <label htmlFor='password-check'>비밀번호 체크</label>
-      <Input
-        prefix={<LockOutlined className="site-form-item-icon" />}
-        name='password-check'
-        placeholder="Check Password"
-        type="password"
-        value={passwordCheck} 
-        onChange={onChangePasswordCheck}
-         required />
-         {passwordError && <ErrorMessage>비밀번호가 일치하지 않습니다.</ErrorMessage>}
-    </Form.Item>
+            <Form.Item>
+              <label htmlFor='password-check'>비밀번호 체크</label>
+              <Input
+              prefix={<LockOutlined className="site-form-item-icon" />}
+              name='password-check'
+              placeholder="Check Password"
+              type="password"
+              value={passwordCheck} 
+              onChange={onChangePasswordCheck}
+              required 
+              />
+              {passwordError && <ErrorMessage>비밀번호가 일치하지 않습니다.</ErrorMessage>}
+            </Form.Item>
 
-    <Form.Item>
-    <Checkbox name='user-term' checked={term} onChange={onChangeTerm}>프로젝트 내 인물 및 사물 이미지 출처는 'UNSPLASHED'입니다. 회원가입 후 아이디는 변경 불가 합니다.</Checkbox>
-            {termError && <ErrorMessage>약관에 동의하셔야 합니다.</ErrorMessage>}
-    </Form.Item>
+            <Form.Item>
+              <Checkbox name='user-term' checked={term} onChange={onChangeTerm}>회원가입 후 아이디는 변경 불가 합니다.</Checkbox>
+              {termError && <ErrorMessage>약관에 동의하셔야 합니다.</ErrorMessage>}
+            </Form.Item>
 
-    <Form.Item>
-      <Button 
-      loading={signUpLoading}  
-      htmlType="submit" 
-      className="login-form-button">
-        회원가입 하기
-      </Button>
-      
-    </Form.Item>
-  </Form>
-  </Card>
-  </OneMyInfo>
+            <Form.Item>
+              <Button 
+              loading={signUpLoading}  
+              htmlType="submit" 
+              className="login-form-button">
+              회원가입 하기
+              </Button>
+            </Form.Item>
+          </Form>
+        </Card>
+      </Col>
+    </OneMyInfo>
   </AppLayout>
 );
 };

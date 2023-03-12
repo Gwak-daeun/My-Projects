@@ -29,10 +29,11 @@ const AllPosts = () => {
     const {mainPosts, hasMorePosts, loadPostsLoading, retweetError} = useSelector((state) => state.post);
 
     useEffect(() => {
+        if(!(me && me.id)) {
+            alert("로그인 후 이용 가능합니다.");
+            Router.push('/');
+        }
         function onScroll(){
-            // console.log(window.scrollY, document.documentElement.clientHeight, document.documentElement.scrollHeight);
-            
-            
             if(window.scrollY + document.documentElement.clientHeight > document.documentElement.scrollHeight - 300){
                 if(hasMorePosts && !loadPostsLoading){
                     const lastId = mainPosts[mainPosts.length -1]?.id;
@@ -41,15 +42,13 @@ const AllPosts = () => {
                         lastId
                     });
                 }
-               
             }
-
         }
         window.addEventListener('scroll', onScroll);
         return() => {
             window.removeEventListener('scroll', onScroll);
         };
-    },[mainPosts, hasMorePosts, loadPostsLoading]);
+    },[mainPosts, hasMorePosts, loadPostsLoading, me && me.id]);
 
     console.log("메인포스트: ", mainPosts);
 
