@@ -2,6 +2,7 @@ import { Rate, Row } from "antd";
 import TextArea from "antd/lib/input/TextArea";
 import React from "react";
 import styled from "styled-components";
+import { backUrl } from "../config/config";
 
 const OneSore = styled.div`
   .rate1{
@@ -58,8 +59,8 @@ const Score = ({comments}) => {
                   </Row>
                 <Row>
                   
-                <OneSore> { comments[0].Images[0] ? <img className="img1" src={`http://localhost:3065/${comments[0].Images[0].src}`} /> : null } </OneSore>
-                <OneSore> { comments[0].Images[1] ? <img className="img1" src={`http://localhost:3065/${comments[0].Images[1].src}`} /> : null } </OneSore>
+                <OneSore> { comments[0].Images[0] ? <img className="img1" src={`${backUrl}/${comments[0].Images[0].src}`} /> : null } </OneSore>
+                <OneSore> { comments[0].Images[1] ? <img className="img1" src={`${backUrl}/${comments[0].Images[1].src}`} /> : null } </OneSore>
 
                 </Row>
                 {/* {

@@ -1,19 +1,15 @@
 import AppLayout from "../components/AppLayout";
-import { AutoComplete, Button, Card, Carousel, Col, Form, Input, Row, Select, Space, Upload  } from 'antd';
-import { EditOutlined, UploadOutlined  } from '@ant-design/icons';
-import TextArea from "antd/lib/input/TextArea";
+import { AutoComplete, Button, Card, Carousel, Col, Form, Input, Row } from 'antd';
+import { EUploadOutlined  } from '@ant-design/icons';
 import { useDispatch, useSelector } from "react-redux";
 import { useCallback, useEffect, useRef, useState } from "react";
 import useInput from "../hooks/useInput";
-import { ADD_POST_REQUEST, LOAD_NEW_POSTS_REQUEST, LOAD_POSTS_REQUEST, NEWLOOK_KEYWORD_REQUEST, REMOVE_IMAGE, UPLOAD_IMAGES_REQUEST } from "../reducers/post";
-import Login from "./login";
-import { useRouter } from "next/router";
+import { ADD_POST_REQUEST, LOAD_NEW_POSTS_REQUEST, UPLOAD_IMAGES_REQUEST } from "../reducers/post";
 import Router from "next/router";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faNoteSticky } from "@fortawesome/free-regular-svg-icons";
-const { Meta } = Card;
-const { Option } = Select;
 import styled from "styled-components";
+import { backUrl } from "../config/config";
 
 const OneNewLook = styled.div`
 
@@ -428,16 +424,16 @@ const onChangeImages = useCallback((e) => {
                             <Carousel style={{}} autoplay>
                                 
                                 <div>
-                                    { mainPosts[0] === undefined ?  <NullImage />   :  <OneNewLook> <img className="img2" src={`http://localhost:3065/${mainPosts[0]?.Images[0]?.src}`} /></OneNewLook> }
+                                    { mainPosts[0] === undefined ?  <NullImage />   :  <OneNewLook> <img className="img2" src={`${backUrl}/${mainPosts[0]?.Images[0]?.src}`} /></OneNewLook> }
                                 </div>
                                 <div>
-                                    { mainPosts[1] === undefined ?  <NullImage />   :   <OneNewLook> <img className="img2" src={ `http://localhost:3065/${mainPosts[1]?.Images[0]?.src}`} /></OneNewLook> }
+                                    { mainPosts[1] === undefined ?  <NullImage />   :   <OneNewLook> <img className="img2" src={ `${backUrl}/${mainPosts[1]?.Images[0]?.src}`} /></OneNewLook> }
                                 </div>
                                 <div>
-                                    { mainPosts[2] === undefined ?  <NullImage />   :    <OneNewLook> <img className="img2" src={ `http://localhost:3065/${mainPosts[2]?.Images[0]?.src}`} /></OneNewLook> }
+                                    { mainPosts[2] === undefined ?  <NullImage />   :    <OneNewLook> <img className="img2" src={ `${backUrl}/${mainPosts[2]?.Images[0]?.src}`} /></OneNewLook> }
                                 </div>
                                 <div>
-                                    { mainPosts[3] === undefined ?  <NullImage />   :   <OneNewLook> <img className="img2" src={ `http://localhost:3065/${mainPosts[3]?.Images[0]?.src}`}  /></OneNewLook> }
+                                    { mainPosts[3] === undefined ?  <NullImage />   :   <OneNewLook> <img className="img2" src={ `${backUrl}/${mainPosts[3]?.Images[0]?.src}`}  /></OneNewLook> }
                                 </div>
                             </Carousel>
                         </div>

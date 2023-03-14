@@ -13,6 +13,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import styled from 'styled-components';
 import Meta from "antd/lib/card/Meta";
 import { Card, List } from "antd";
+import { backUrl } from "../../config/config";
 
 const OneHashtag = styled.div`
 
@@ -76,7 +77,7 @@ return(
                         className="card1"
                         title={<a href={`http://localhost:3000/post/${items.id}`} >{items.lookName}</a>}
                         
-                        cover={<a href={`http://localhost:3000/post/${items.id}`} ><img className="img1"alt="example" src={`http://localhost:3065/${items.Images[0]?.src}`} /></a>}
+                        cover={<a href={`http://localhost:3000/post/${items.id}`} ><img className="img1"alt="example" src={`${backUrl}/${items.Images[0]?.src}`} /></a>}
                         >
                             <Meta description={'#' + items.Hashtags[0].name + " 가 포함된 Look"} />
                         </Card>

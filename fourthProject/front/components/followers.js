@@ -4,6 +4,7 @@ import { Avatar, Card, Empty, List, Modal } from 'antd';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
+import { backUrl } from '../config/config';
 
 const Li = styled.li`
   .ficon{
@@ -93,14 +94,8 @@ const Followers = () => {
               renderItem={(items) => (
                 <List.Item>
                   <OneFollwer>
-                    {/* <Card
-                    className='card2'
-                    title={<a href={`http://localhost:3000/user/${items.id}`} >{items.nickname}</a>}
-                    cover={<a href={`http://localhost:3000/user/${items.id}`} ><OneFollwer><img className='img1'alt="example" src={items.Image.src === originalImage ? originalImage : `http://localhost:3065/${items.Image.src}`} /></OneFollwer></a>}
-                    >
-                    </Card> */}
                     <a href={`http://localhost:3000/user/${items.id}`} >
-                    <Avatar size={100} src={items.Image.src === originalImage ? originalImage : `http://localhost:3065/${items.Image.src}`} />
+                    <Avatar size={100} src={items.Image.src === originalImage ? originalImage : `${backUrl}/${items.Image.src}`} />
                   </a>
                   <a className='a1' href={`http://localhost:3000/user/${items.id}`} >{items.nickname}</a>
                   </OneFollwer>
@@ -114,13 +109,5 @@ const Followers = () => {
     );
 
 };
-
-// {me.Followers.map((follower) => (
-//   <ul key={follower.id}>
-//     <p><FontAwesomeIcon icon={faSquare} style={{fontSize:15, color: 'pink'}} /> 
-//     <img style={{width: 60}} src={following.Image.src === originalImage ? originalImage : `http://localhost:3065/${follower.Image.src}`} />
-//     </p>
-//   </ul>
-//   ))}
 
 export default Followers;

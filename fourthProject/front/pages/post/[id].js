@@ -24,6 +24,7 @@ import '../css/post[id].module.css';
 import useInput from '../../hooks/useInput';
 const { Meta } = Card;
 import styled from 'styled-components';
+import { backUrl } from '../../config/config';
 
 const OneLook = styled.div`
 
@@ -432,7 +433,7 @@ const Post = () => {
                     maxLength={200}
                     placeholder="인용 메모를 남겨보세요."
                     />
-                  <OneLook> <img className='img1' src={`http://localhost:3065/${singlePost.Images[0]?.src}`} /> </OneLook>
+                  <OneLook> <img className='img1' src={`${backUrl}/${singlePost.Images[0]?.src}`} /> </OneLook>
                   <OneLook> <Button className='button1' htmlType="submit">인용하기</Button></OneLook>
                 </Form>
             </Modal>
@@ -456,7 +457,7 @@ const Post = () => {
                 <Card
                 className='card1'
                 
-                cover={<OneLook><img className='img2' alt="example" src={ previewImg ? previewImg : `http://localhost:3065/${singlePost.Images[0]?.src}`} /></OneLook>}
+                cover={<OneLook><img className='img2' alt="example" src={ previewImg ? previewImg : `${backUrl}/${singlePost.Images[0]?.src}`} /></OneLook>}
                 actions={
                     id && singlePost.UserId === me.id
                     ? 

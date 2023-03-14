@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 
 const { Meta } = Card;
 import styled from "styled-components";
+import { backUrl } from "../../config/config";
 
 const OneUserInfo = styled.div`
   .card1{
@@ -33,7 +34,7 @@ const UserInfo = () => {
                 <Card
                     title={userInfo.nickname+"'s Info"}
                     className='card1'
-                    cover={<OneUserInfo><img className="img1" src={ userInfo.Image.src === originalImage ? userInfo.Image.src : `http://localhost:3065/${userInfo.Image.src}`} /></OneUserInfo>}
+                    cover={<OneUserInfo><img className="img1" src={ userInfo.Image.src === originalImage ? userInfo.Image.src : `${backUrl}/${userInfo.Image.src}`} /></OneUserInfo>}
                 >
                 <Meta
                   title={<Input  readOnly defaultValue={userInfo.nickname} />}

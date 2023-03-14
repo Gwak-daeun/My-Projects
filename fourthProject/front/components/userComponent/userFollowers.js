@@ -4,6 +4,7 @@ import { Avatar, Card, Empty, List, Modal } from 'antd';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
+import { backUrl } from '../../config/config';
 
 const Li = styled.li`
   .fIcon{
@@ -94,14 +95,8 @@ const UserFollowers = () => {
               renderItem={(items) => (
                 <List.Item>
                   <OneUserFollower>
-                    {/* <Card
-                    className='card2'
-                    title={<a href={`http://localhost:3000/post/${item.id}`} >{item.nickname}</a>}
-                    cover={<a href={`http://localhost:3000/post/${item.id}`} ><OneUserFollower><img className='img1'alt="example" src={item.Image.src === originalImage ? originalImage : `http://localhost:3065/${item.Image.src}`} /></OneUserFollower></a>}
-                    >
-                    </Card> */}
                     <a href={`http://localhost:3000/user/${items.id}`} >
-                    <Avatar size={100} src={items.Image.src === originalImage ? originalImage : `http://localhost:3065/${items.Image.src}`} />
+                    <Avatar size={100} src={items.Image.src === originalImage ? originalImage : `${backUrl}/${items.Image.src}`} />
                     </a>
                   <a className='a1' href={`http://localhost:3000/user/${items.id}`} >{items.nickname}</a>
                   </OneUserFollower>

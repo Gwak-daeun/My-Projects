@@ -4,6 +4,7 @@ import { Card, Empty, List, Modal } from 'antd';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
+import { backUrl } from '../../config/config';
 
 const OneUserLikeList = styled.div`
   .icons{
@@ -83,7 +84,7 @@ const UserLikeList = () => {
                 <List.Item>
                     <Card 
                     title={<a href={`http://localhost:3000/post/${item.id}`} >{item.lookName}</a>}
-                    cover={<a href={`http://localhost:3000/post/${item.id}`} ><OneUserLikeList><img className='img1' alt="example" src={`http://localhost:3065/${item.Images[0].src}`} /></OneUserLikeList></a>}
+                    cover={<a href={`http://localhost:3000/post/${item.id}`} ><OneUserLikeList><img className='img1' alt="example" src={`${backUrl}/${item.Images[0].src}`} /></OneUserLikeList></a>}
                     className='card2'
                     >
                     </Card>

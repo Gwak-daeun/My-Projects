@@ -1,10 +1,10 @@
-import React, { createElement, useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
-import Link from 'next/link';
 import { LOAD_USER_CALENDAR_DATA_REQUEST } from "../../reducers/user";
 import { useRouter } from "next/router";
 import styled from "styled-components";
+import { backUrl } from "../../config/config";
 
 const OneImage = styled.div`
 
@@ -60,7 +60,7 @@ const UserDateCellRender = (value) => {
          case moment(date).format("YY-MM-DD"):  
          return (
             <a href={`http://localhost:3000/post/${postId}`} >
-               <OneImage><img className="img1" src={`http://localhost:3065/${photo}`} /></OneImage> 
+               <OneImage><img className="img1" src={`${backUrl}/${photo}`} /></OneImage> 
             </a>
          );
          default:

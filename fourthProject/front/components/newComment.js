@@ -168,7 +168,6 @@ const NewComment = ({post}) => {
                onRemove={onRemoveImage}
                beforeUpload={beforeUpload}
                >
-               {/* { fileList  ?  fileList.length < 2 && 'Drag images or click' : <h3>댓글 업로드 완료</h3>} */}
                { fileList.length < 2 && 'Drag images or click' }
                </Upload>
                 </Row>

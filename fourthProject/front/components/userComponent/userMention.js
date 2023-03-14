@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenNib } from '@fortawesome/free-solid-svg-icons';
 const { Meta } = Card;
 import styled from 'styled-components';
+import { backUrl } from '../../config/config';
 
 const OneUserMention = styled.div`
   .card1{
@@ -95,7 +96,7 @@ const UserMention = () => {
               renderItem={(item) => (
                 <List.Item>
                     <Card
-                    cover={<a href={`http://localhost:3000/post/${item.id}`} ><OneUserMention><img className='img1' alt="example" src={`http://localhost:3065/${item.referSrc}`} /></OneUserMention></a>}
+                    cover={<a href={`http://localhost:3000/post/${item.id}`} ><OneUserMention><img className='img1' alt="example" src={`${backUrl}/${item.referSrc}`} /></OneUserMention></a>}
                     className='card2'
                     >
                       <Meta description={item.content} />

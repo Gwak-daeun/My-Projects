@@ -4,6 +4,7 @@ import { Avatar, Card, Empty, List, Modal } from 'antd';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
+import { backUrl } from '../config/config';
 
 const One = styled.div`
   .icons{
@@ -90,7 +91,7 @@ const originalImage = `https://static.vecteezy.com/system/resources/previews/002
                 <List.Item>
                   <One>
                   <a href={`http://localhost:3000/user/${items.id}`} >
-                    <Avatar size={100} src={items.Image.src === originalImage ? originalImage : `http://localhost:3065/${items.Image.src}`} />
+                    <Avatar size={100} src={items.Image.src === originalImage ? originalImage : `${backUrl}/${items.Image.src}`} />
                   </a>
                   <a className='a1' href={`http://localhost:3000/user/${items.id}`} >{items.nickname}</a>
                   </One>
