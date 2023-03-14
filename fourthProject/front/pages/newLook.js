@@ -1,6 +1,6 @@
 import AppLayout from "../components/AppLayout";
 import { AutoComplete, Button, Card, Carousel, Col, Form, Input, Row } from 'antd';
-import { EUploadOutlined  } from '@ant-design/icons';
+import { UploadOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from "react-redux";
 import { useCallback, useEffect, useRef, useState } from "react";
 import useInput from "../hooks/useInput";
@@ -424,7 +424,7 @@ const onChangeImages = useCallback((e) => {
                             <Carousel style={{}} autoplay>
                                 
                                 <div>
-                                    { mainPosts[0] === undefined ?  <NullImage />   :  <OneNewLook> <img className="img2" src={`${backUrl}/${mainPosts[0]?.Images[0]?.src}`} /></OneNewLook> }
+                                    { mainPosts[0] === undefined ?  <NullImage />   :  <OneNewLook> <img className="img2" src={ `${backUrl}/${mainPosts[0]?.Images[0]?.src}`} /></OneNewLook> }
                                 </div>
                                 <div>
                                     { mainPosts[1] === undefined ?  <NullImage />   :   <OneNewLook> <img className="img2" src={ `${backUrl}/${mainPosts[1]?.Images[0]?.src}`} /></OneNewLook> }
