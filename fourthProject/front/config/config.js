@@ -1,1 +1,1 @@
-export const backUrl = 'http://api.fashionary.com';
+export const backUrl = 'http://43.201.174.108';
