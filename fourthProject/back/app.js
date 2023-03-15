@@ -51,7 +51,7 @@ app.use(session({
   cookie: {
     httpOnly: true,
     secure: false,
-    domain: process.env.NODE_ENV === 'production' && '.fashionary.com'
+    domain: process.env.NODE_ENV === 'production' && '.fashionary.site'
   }
 }));
 app.use(passport.initialize());
