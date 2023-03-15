@@ -31,8 +31,16 @@ if(process.env.NODE_ENV === 'production'){
   app.use(morgan('combined'));
   app.use(hpp());
   app.use(helmet());
+  app.use(cors({
+    origin: 'http://fashionary.site',
+    credentials: true
+  }))
 } else {
   app.use(morgan('dev'));
+  app.use(cors({
+    origin: true,
+    credentials: true
+  }))
 }
 
 app.use(cors({
@@ -51,7 +59,7 @@ app.use(session({
   cookie: {
     httpOnly: true,
     secure: false,
-    domain: process.env.NODE_ENV === 'production' && '.fashionary.site'
+    domain: process.env.NODE_ENV === 'production' && 'http://fashionary.site'
   }
 }));
 app.use(passport.initialize());
