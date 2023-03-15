@@ -1,1 +1,1 @@
-export const backUrl = 'http://43.200.253.136';
+export const backUrl = 'http://52.78.70.47';
