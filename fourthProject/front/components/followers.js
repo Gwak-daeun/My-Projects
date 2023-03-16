@@ -95,7 +95,7 @@ const Followers = () => {
                 <List.Item>
                   <OneFollwer>
                     <a href={`http://localhost:3000/user/${items.id}`} >
-                    <Avatar size={100} src={items.Image.src === originalImage ? originalImage : `${backUrl}/${items.Image.src}`} />
+                    <Avatar size={100} src={items.Image.src === originalImage ? originalImage : items.Image.src} />
                   </a>
                   <a className='a1' href={`http://localhost:3000/user/${items.id}`} >{items.nickname}</a>
                   </OneFollwer>

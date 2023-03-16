@@ -92,7 +92,7 @@ const Mention = () => {
               renderItem={(item) => (
                 <List.Item>
                     <Card
-                    cover={<a href={`http://localhost:3000/post/${item.id}`} ><One><img className='img1' alt="example" src={`${backUrl}/${item.referSrc}`} /></One></a>}
+                    cover={<a href={`http://localhost:3000/post/${item.id}`} ><One><img className='img1' alt="example" src={item.referSrc} /></One></a>}
                     className='card2'
                     >
                       <Meta description={item.content} />

@@ -60,7 +60,7 @@ const UserDateCellRender = (value) => {
          case moment(date).format("YY-MM-DD"):  
          return (
             <a href={`http://localhost:3000/post/${postId}`} >
-               <OneImage><img className="img1" src={`${backUrl}/${photo}`} /></OneImage> 
+               <OneImage><img className="img1" src={photo} /></OneImage> 
             </a>
          );
          default:

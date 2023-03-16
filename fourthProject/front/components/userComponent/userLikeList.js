@@ -84,7 +84,7 @@ const UserLikeList = () => {
                 <List.Item>
                     <Card 
                     title={<a href={`http://localhost:3000/post/${item.id}`} >{item.lookName}</a>}
-                    cover={<a href={`http://localhost:3000/post/${item.id}`} ><OneUserLikeList><img className='img1' alt="example" src={`${backUrl}/${item.Images[0].src}`} /></OneUserLikeList></a>}
+                    cover={<a href={`http://localhost:3000/post/${item.id}`} ><OneUserLikeList><img className='img1' alt="example" src={item.Images[0].src} /></OneUserLikeList></a>}
                     className='card2'
                     >
                     </Card>

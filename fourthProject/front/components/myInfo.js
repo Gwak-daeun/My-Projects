@@ -116,7 +116,7 @@ const cancelFix = useCallback(() => {
           </OneMyInfo>
            :
            <OneMyInfo>
-            <img className="img1" src={previewImg ? previewImg : `${backUrl}/${me.Image.src}`}  />
+            <img className="img1" src={previewImg ? previewImg : me.Image.src}  />
            </OneMyInfo>
               }
         

@@ -457,7 +457,7 @@ const Post = () => {
                 <Card
                 className='card1'
                 
-                cover={<OneLook><img className='img2' alt="example" src={ previewImg ? previewImg : `${backUrl}/${singlePost.Images[0]?.src}`} /></OneLook>}
+                cover={<OneLook><img className='img2' alt="example" src={ previewImg ? previewImg : inglePost.Images[0]?.src} /></OneLook>}
                 actions={
                     id && singlePost.UserId === me.id
                     ? 

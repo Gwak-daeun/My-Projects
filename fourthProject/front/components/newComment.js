@@ -3,9 +3,8 @@ import TextArea from "antd/lib/input/TextArea";
 import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import useInput from "../hooks/useInput";
-import { ADD_COMMENT_REQUEST, NEW_COMMENT_IMAGES_REQUEST, REMOVE_IMAGE, UPLOAD_IMAGES_REQUEST } from "../reducers/post";
+import { ADD_COMMENT_REQUEST, NEW_COMMENT_IMAGES_REQUEST, REMOVE_IMAGE } from "../reducers/post";
 import styled from "styled-components";
-import Router from "next/router";
 
 const OneComment = styled.div`
   .card1{

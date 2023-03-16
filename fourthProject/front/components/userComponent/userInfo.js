@@ -34,7 +34,7 @@ const UserInfo = () => {
                 <Card
                     title={userInfo.nickname+"'s Info"}
                     className='card1'
-                    cover={<OneUserInfo><img className="img1" src={ userInfo.Image.src === originalImage ? userInfo.Image.src : `${backUrl}/${userInfo.Image.src}`} /></OneUserInfo>}
+                    cover={<OneUserInfo><img className="img1" src={ userInfo.Image.src === originalImage ? userInfo.Image.src : userInfo.Image.src} /></OneUserInfo>}
                 >
                 <Meta
                   title={<Input  readOnly defaultValue={userInfo.nickname} />}

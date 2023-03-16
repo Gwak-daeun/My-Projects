@@ -82,7 +82,7 @@ const LikeList = () => {
                 <List.Item>
                     <Card 
                     title={<a href={`http://localhost:3000/post/${item.id}`} >{item.lookName}</a>}
-                    cover={<a href={`http://localhost:3000/post/${item.id}`} ><One><img className='img1' alt="example" src={`${backUrl}/${item.Images[0].src}`} /></One></a>}
+                    cover={<a href={`http://localhost:3000/post/${item.id}`} ><One><img className='img1' alt="example" src={item.Images[0].src} /></One></a>}
                     className='card2'
                     >
                     </Card>

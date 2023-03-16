@@ -424,16 +424,16 @@ const onChangeImages = useCallback((e) => {
                             <Carousel style={{}} autoplay>
                                 
                                 <div>
-                                    { mainPosts[0] === undefined ?  <NullImage />   :  <OneNewLook> <img className="img2" src={ `${backUrl}/${mainPosts[0]?.Images[0]?.src}`} /></OneNewLook> }
+                                    { mainPosts[0] === undefined ?  <NullImage />   :  <OneNewLook> <img className="img2" src={mainPosts[0]?.Images[0]?.src} /></OneNewLook> }
                                 </div>
                                 <div>
-                                    { mainPosts[1] === undefined ?  <NullImage />   :   <OneNewLook> <img className="img2" src={ `${backUrl}/${mainPosts[1]?.Images[0]?.src}`} /></OneNewLook> }
+                                    { mainPosts[1] === undefined ?  <NullImage />   :   <OneNewLook> <img className="img2" src={mainPosts[1]?.Images[0]?.src} /></OneNewLook> }
                                 </div>
                                 <div>
-                                    { mainPosts[2] === undefined ?  <NullImage />   :    <OneNewLook> <img className="img2" src={ `${backUrl}/${mainPosts[2]?.Images[0]?.src}`} /></OneNewLook> }
+                                    { mainPosts[2] === undefined ?  <NullImage />   :    <OneNewLook> <img className="img2" src={mainPosts[2]?.Images[0]?.src} /></OneNewLook> }
                                 </div>
                                 <div>
-                                    { mainPosts[3] === undefined ?  <NullImage />   :   <OneNewLook> <img className="img2" src={ `${backUrl}/${mainPosts[3]?.Images[0]?.src}`}  /></OneNewLook> }
+                                    { mainPosts[3] === undefined ?  <NullImage />   :   <OneNewLook> <img className="img2" src={mainPosts[3]?.Images[0]?.src}  /></OneNewLook> }
                                 </div>
                             </Carousel>
                         </div>

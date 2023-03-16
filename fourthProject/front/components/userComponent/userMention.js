@@ -96,7 +96,7 @@ const UserMention = () => {
               renderItem={(item) => (
                 <List.Item>
                     <Card
-                    cover={<a href={`http://localhost:3000/post/${item.id}`} ><OneUserMention><img className='img1' alt="example" src={`${backUrl}/${item.referSrc}`} /></OneUserMention></a>}
+                    cover={<a href={`http://localhost:3000/post/${item.id}`} ><OneUserMention><img className='img1' alt="example" src={item.referSrc} /></OneUserMention></a>}
                     className='card2'
                     >
                       <Meta description={item.content} />
