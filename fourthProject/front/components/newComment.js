@@ -65,7 +65,7 @@ const NewComment = ({post}) => {
         if (isUploading) {
           return false;
         }
-        
+        console.log("댓글 이미지 등록", fileList);
         setIsUploading(true);
         dispatch({
           type: NEW_COMMENT_IMAGES_REQUEST,
