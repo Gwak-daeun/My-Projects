@@ -23,17 +23,16 @@ AWS.config.update({
   secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
   region: 'ap-northeast-2',
 });
-//이미지 업로드
 const upload = multer({
-    storage: multerS3({
-      s3: new AWS.S3(),
-      bucket: 'fashionary-s3',
-      key(req, file, cb){
-        cb(null, `original/${Date.now()}_${path.basename(file.originalname)}`)
-      }
-    }),
-    limits: {fileSize: 20 * 1024 * 1024} //20MB
-})
+  storage: multerS3({
+    s3: new AWS.S3(),
+    bucket: 'react-nodebird',
+    key(req, file, cb) {
+      cb(null, `original/${Date.now()}_${path.basename(file.originalname)}`)
+    }
+  }),
+  limits: { fileSize: 20 * 1024 * 1024 }, // 20MB
+});
 router.post('/images', isLoggedIn, upload.array('image'), async(req, res, next) => {
     console.log("req.files:::::::" + req.files);
     res.json(req.files.map((v) => v.location));
