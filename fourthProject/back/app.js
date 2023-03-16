@@ -34,13 +34,13 @@ if(process.env.NODE_ENV === 'production'){
   app.use(cors({
     origin: 'http://fashionary.site',
     credentials: true
-  }))
+  }));
 } else {
   app.use(morgan('dev'));
   app.use(cors({
     origin: true,
     credentials: true
-  }))
+  }));
 }
 
 app.use('/', express.static(path.join(__dirname, 'uploads')));
