@@ -54,13 +54,14 @@ const NewComment = ({post}) => {
 
 
       const onChangeImages = useCallback(({ fileList: newFileList }) => {
-      setFileList(newFileList);
-      
+        setFileList(newFileList);
       }, []);
 
       const beforeUpload = (file) => {
         const imageFormData = new FormData();
-        imageFormData.append('image', file);
+        fileList.forEach((file) => {
+          imageFormData.append('image', file);
+        })
         
         if (isUploading) {
           return false;
