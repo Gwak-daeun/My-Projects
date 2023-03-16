@@ -2,9 +2,10 @@ const express = require('express');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
+const multerS3 = require('multer-s3');
+const AWS = require('aws-sdk');
 
-
-const { Post, Image, Comment, User, Hashtag, Reference, Posthashtag, sequelize } = require('../models');
+const { Post, Image, Comment, User, Hashtag, Reference } = require('../models');
 const {isLoggedIn} = require('./middlewares');
 
 const router = express.Router();
@@ -17,23 +18,25 @@ catch(error){
     fs.mkdirSync('uploads');
 }
 
+AWS.config.update({
+  accessKeyId: process.env.S3_ACCESS_KEY_ID,
+  secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
+  region: 'ap-northeast-2',
+});
 //이미지 업로드
 const upload = multer({
-    storage: multer.diskStorage({
-        destination(req, file, done){ //destination: 컴퓨터 하드디스크에 저장
-            done(null, 'uploads');
-        },
-        filename(req, file, done){ 
-            const ext = path.extname(file.originalname); 
-            const basename = path.basename(file.originalname, ext); 
-            done(null, basename + '_' + new Date().getTime() + ext);
-        }
+    storage: multerS3({
+      s3: new AWS.S3(),
+      bucket: 'fashionary-s3',
+      key(req, file, cb){
+        cb(null, `original/${Date.now()}_${path.basename(file.originalname)}`)
+      }
     }),
     limits: {fileSize: 20 * 1024 * 1024} //20MB
 })
 router.post('/images', isLoggedIn, upload.array('image'), async(req, res, next) => {
-    console.log(":::::::req.files:::::::" + req.files);
-    res.json(req.files.map((v) => v.filename));
+    console.log("req.files:::::::" + req.files);
+    res.json(req.files.map((v) => v.location));
 });
 
 //오늘 등록된 게시글이 있는지 확인 후, 있으면 에러처리
