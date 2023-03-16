@@ -20,7 +20,7 @@ catch(error){
 
 AWS.config.update({
   accessKeyId: process.env.S3_ACCESS_KEY_ID,
-  secretAccessKey: process.env.S3_SCRET_ACCESS_KEY,
+  secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
   region: 'ap-northeast-2',
 });
 //이미지 업로드
