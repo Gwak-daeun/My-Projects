@@ -31,7 +31,6 @@ if(process.env.NODE_ENV === 'production'){
   app.use(morgan('combined'));
   app.use(hpp());
   app.use(helmet());
-  app.set("trust proxy", 1);
   app.use(cors({
     origin: 'http://fashionary.site',
     credentials: true
@@ -53,12 +52,10 @@ app.use(session({
   saveUninitialized: false,
   resave: false,
   secret: process.env.COOKIE_SECRET,
-  proxy: true,
   cookie: {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production" ? true : false, //https 적용 시 true
-    sameSite: process.env.NODE_ENV === "production" ? "none" : false,
-    domain: process.env.NODE_ENV === 'production' && '.fashionary.site'
+    secure: false,
+    domain: process.env.NODE_ENV === 'production' && 'http://fashionary.site'
   }
 }));
 app.use(passport.initialize());
