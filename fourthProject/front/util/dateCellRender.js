@@ -22,18 +22,12 @@ const DateCellRender = (value) => {
       });
    }, []);
 
-   // console.log("UserCalendarData:::::::::" + JSON.stringify(userCalendarData));
-   // console.log("UserCalendarData길이: ", userCalendarData.length);
-
    const getDayInfo = () => {
       const calendarData = [];
       let diaryMoment;
 
       for( let i = 0; i < userCalendarData.length; i++ ){
-         // console.log("생성 날짜",  moment(userCalendarData[i].createdAt).format("YYYY-MM-DD"));
          diaryMoment = moment(userCalendarData[i].createdAt).format("YYYY-MM-DD");
-
-         // console.log("다이어리모맨트:", diaryMoment);
 
          if(diaryMoment){
             calendarData.push( {
@@ -52,14 +46,12 @@ const DateCellRender = (value) => {
 
    const PhotoRander = ({date, photo, postId}) => {
 
-   // console.log("캘린더 날짜: ", new Date(value).toLocaleDateString());
-
       switch(moment(value).format("YY-MM-DD")){
          case moment(date).format("YY-MM-DD"):  
          return (
             <div >
             <a href={`http://localhost:3000/post/${postId}`} >
-                <ImageTag src={`http://localhost:3065/${photo}`} />
+                <ImageTag src={photo} />
             </a>
             </div>
          );
