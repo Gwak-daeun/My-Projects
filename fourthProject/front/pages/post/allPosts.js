@@ -7,7 +7,6 @@ import { LOAD_POSTS_REQUEST } from "../../reducers/post";
 import wrapper from "../../store/configureStore";
 import AppLayout from "../../components/AppLayout";
 import styled from "styled-components";
-import { backUrl } from "../../config/config";
 
 const OneAllPosts = styled.div`
 
@@ -66,9 +65,9 @@ const AllPosts = () => {
                     <List.Item>
                         <Card 
                         className="card1"
-                        title={<a href={`http://localhost:3000/post/${items.id}`} >{items.lookName}</a>}
+                        title={<a href={`http://fashionary.site/post/${items.id}`} >{items.lookName}</a>}
                         
-                        cover={<a href={`http://localhost:3000/post/${items.id}`} ><img className="img1" alt="example" src={items?.Images[0]?.src} /></a>}
+                        cover={<a href={`http://fashionary.site/post/${items.id}`} ><img className="img1" alt="example" src={items?.Images[0]?.src} /></a>}
                         >
                         </Card>
                     </List.Item>

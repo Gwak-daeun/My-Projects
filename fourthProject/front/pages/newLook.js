@@ -9,7 +9,6 @@ import Router from "next/router";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faNoteSticky } from "@fortawesome/free-regular-svg-icons";
 import styled from "styled-components";
-import { backUrl } from "../config/config";
 
 const OneNewLook = styled.div`
 

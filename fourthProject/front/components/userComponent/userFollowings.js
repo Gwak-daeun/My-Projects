@@ -95,10 +95,10 @@ const originalImage = `https://static.vecteezy.com/system/resources/previews/002
                     className='card2'
                     >
                     </Card> */}
-                    <a href={`http://localhost:3000/user/${items.id}`} >
+                    <a href={`http://fashionary.site/user/${items.id}`} >
                     <Avatar size={100} src={items.Image.src === originalImage ? originalImage : items.Image.src} />
                   </a>
-                  <a className='a1' href={`http://localhost:3000/user/${items.id}`} >{items.nickname}</a>
+                  <a className='a1' href={`http://fashionary.site/user/${items.id}`} >{items.nickname}</a>
                   </OneUserFollowing>
                 </List.Item>
             )}

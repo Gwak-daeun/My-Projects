@@ -100,10 +100,10 @@ const UserFollowers = () => {
                     cover={<a href={`http://localhost:3000/post/${item.id}`} ><OneUserFollower><img className='img1'alt="example" src={item.Image.src === originalImage ? originalImage : `http://localhost:3065/${item.Image.src}`} /></OneUserFollower></a>}
                     >
                     </Card> */}
-                    <a href={`http://localhost:3000/user/${items.id}`} >
+                    <a href={`http://fashionary.site/user/${items.id}`} >
                     <Avatar size={100} src={items.Image.src === originalImage ? originalImage : items.Image.src} />
                     </a>
-                  <a className='a1' href={`http://localhost:3000/user/${items.id}`} >{items.nickname}</a>
+                  <a className='a1' href={`http://fashionary.site/user/${items.id}`} >{items.nickname}</a>
                   </OneUserFollower>
                 </List.Item>
             )}

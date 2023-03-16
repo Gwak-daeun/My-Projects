@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { CHANGE_INFO_REQUEST, UPLOAD_PROFILE_IMAGE_REQUEST } from "../reducers/user";
 const { Meta } = Card;
 import styled from "styled-components";
-import { backUrl } from "../config/config";
 
 const OneMyInfo = styled.div`
  .card1{

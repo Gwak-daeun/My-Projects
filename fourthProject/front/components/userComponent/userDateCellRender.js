@@ -4,7 +4,6 @@ import moment from "moment";
 import { LOAD_USER_CALENDAR_DATA_REQUEST } from "../../reducers/user";
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import { backUrl } from "../../config/config";
 
 const OneImage = styled.div`
 
@@ -59,7 +58,7 @@ const UserDateCellRender = (value) => {
       switch(moment(value).format("YY-MM-DD")){
          case moment(date).format("YY-MM-DD"):  
          return (
-            <a href={`http://localhost:3000/post/${postId}`} >
+            <a href={`http://fashionary.site/post/${postId}`} >
                <OneImage><img className="img1" src={photo} /></OneImage> 
             </a>
          );

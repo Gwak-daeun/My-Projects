@@ -256,7 +256,7 @@ router.post('/:postId/comment', isLoggedIn, upload.array('image'), async(req, re
           
           for(let i = 0; i < req.files.length; i++){
             console.log("::::::::req.file:::::::", req.files[i]);
-            const image = await Image.create({src: req.files[i].filename});
+            const image = await Image.create({src: req.files[i].location});
             await comment.addImages(image);
           }
           

@@ -4,7 +4,6 @@ import { Avatar, Card, Empty, List, Modal } from 'antd';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
-import { backUrl } from '../config/config';
 
 const Li = styled.li`
   .ficon{
@@ -94,10 +93,10 @@ const Followers = () => {
               renderItem={(items) => (
                 <List.Item>
                   <OneFollwer>
-                    <a href={`http://localhost:3000/user/${items.id}`} >
+                    <a href={`http://fashionary.site/user/${items.id}`} >
                     <Avatar size={100} src={items.Image.src === originalImage ? originalImage : items.Image.src} />
                   </a>
-                  <a className='a1' href={`http://localhost:3000/user/${items.id}`} >{items.nickname}</a>
+                  <a className='a1' href={`http://fashionary.site/user/${items.id}`} >{items.nickname}</a>
                   </OneFollwer>
                 </List.Item>
             )}

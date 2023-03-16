@@ -50,7 +50,7 @@ const DateCellRender = (value) => {
          case moment(date).format("YY-MM-DD"):  
          return (
             <div >
-            <a href={`http://localhost:3000/post/${postId}`} >
+            <a href={`http://fashionary.site/post/${postId}`} >
                 <ImageTag src={photo} />
             </a>
             </div>
