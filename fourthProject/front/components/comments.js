@@ -30,9 +30,7 @@ const OneComments = styled.div`
 const Comments = ({post}) => {
 
   const dispatch = useDispatch();
-
-
-    const [fileList, setFileList] = useState([]);
+  
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(1);
 
@@ -85,7 +83,7 @@ const Comments = ({post}) => {
   
         const formData = new FormData();
   
-        formData.append('PostId', singlePost.id);
+        formData.append('PostId', post.id);
         formData.append('commentId', currentComments[0].id);
   
   
