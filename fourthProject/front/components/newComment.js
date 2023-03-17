@@ -155,7 +155,6 @@ const NewComment = ({post}) => {
                onChange={onChangeImages}
                onPreview={onPreview}
                onRemove={onRemoveImage}
-               beforeUpload={beforeUpload}
                >
                { fileList.length < 2 && 'Drag images or click' }
                </Upload>
