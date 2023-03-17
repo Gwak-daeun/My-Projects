@@ -64,7 +64,7 @@ const NewComment = ({post}) => {
     }
 
       return dispatch({
-          type: UPLOAD_IMAGES_REQUEST,
+          type: NEW_COMMENT_IMAGES_REQUEST,
           data: imageFormData
       });
     });
