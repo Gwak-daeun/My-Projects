@@ -24,6 +24,9 @@ const OneUserMention = styled.div`
   .card2{
     width: 110px;
   }
+  .li1{
+    margin-bottom: 20px;
+  }
 `;
 
 
@@ -46,32 +49,26 @@ const UserMention = () => {
 
   const IfRefer = () => {
 
-    // for(let i = 0; i < me.References.length; i++){
-    //   return( <li>{me.References[i].content}</li>);
-    // }
-
-      if(userInfo.References[0] !== undefined){
-        return <li><FontAwesomeIcon icon={faPenNib} className="icons" />{userInfo.References[0].content}</li>;
-      }
-      if(userInfo.References[1] !== undefined){
-        return <li><FontAwesomeIcon icon={faPenNib} className="icons" />{userInfo.References[1].content}</li>;
-      }
-      if(userInfo.References[2] !== undefined){
-        return <li><FontAwesomeIcon icon={faPenNib} className="icons" />{userInfo.References[2].content}</li>;
-      }
-      else{
-        return  <div>
-                  <Empty
-                  description={
-                    <span>
-                      아직 인용이 없어요.
-                    </span>
-                  } 
-                  />
-                </div>;
-      }
-  
-
+    if(userInfo.References.length !== 0){
+      return(
+        <OneUserMention>
+          {userInfo.References[0] ? <li className='li1'><FontAwesomeIcon icon={faPenNib} className="icons" />{userInfo.References[0].content === '' ? userInfo.nickname+"의 리트윗" :  userInfo.References[0].content}</li> : null}
+          {userInfo.References[1] ? <li className='li1'><FontAwesomeIcon icon={faPenNib} className="icons" />{userInfo.References[1].content === '' ? userInfo.nickname+"의 리트윗" :  userInfo.References[1].content}</li> : null}
+          {userInfo.References[2] ? <li className='li1'><FontAwesomeIcon icon={faPenNib} className="icons" />{userInfo.References[2].content === '' ? userInfo.nickname+"의 리트윗" :  userInfo.References[2].content}</li> : null}
+        </OneUserMention>
+      ); 
+    }
+    else{
+      return  <div>
+                <Empty
+                description={
+                  <span>
+                    아직 인용이 없어요.
+                  </span>
+                } 
+                />
+              </div>;
+    }
   };
 
     return(

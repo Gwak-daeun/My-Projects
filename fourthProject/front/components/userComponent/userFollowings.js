@@ -23,6 +23,9 @@ const OneUserFollowing = styled.div`
   .a1{
     margin-left: 30px;
   }
+  .li1{
+    margin-bottom: 20px;
+  }
 `;
 
 const UserFollowings = () => {
@@ -42,18 +45,19 @@ const UserFollowings = () => {
 
   const IfFollowing = () => {
 
-    if(userInfo.Followings[0] !== undefined){
-      return <li><FontAwesomeIcon icon={faSquare} className="icons" /> {userInfo.Followings[0].nickname}</li>;
-    }
-    if(userInfo.Followings[1] !== undefined){
-      return <li><FontAwesomeIcon icon={faSquare} className="icons" />{userInfo.Followings[1].nickname}</li>;
-    }
-    if(userInfo.Followings[2] !== undefined){
-      return <li><FontAwesomeIcon icon={faSquare} className="icons" />{userInfo.Followings[2].nickname}</li>;
+    if(userInfo.Followings.length !== 0){
+      return(
+        <OneUserFollowing>
+          {userInfo.Followings[0] ?  <li className='li1'><FontAwesomeIcon icon={faSquare} className="ficon" /> {userInfo.Followings[0].nickname}</li>  : null  }
+          {userInfo.Followings[1] ?  <li className='li1'><FontAwesomeIcon icon={faSquare} className="ficon" /> {userInfo.Followings[1].nickname}</li>  : null  }
+          {userInfo.Followings[2] ?  <li className='li1'><FontAwesomeIcon icon={faSquare} className="ficon" /> {userInfo.Followings[2].nickname}</li>  : null  }
+
+        </OneUserFollowing>
+      ); 
     }
     else{
       return  <div>
-                <Empty 
+                <Empty
                 description={
                   <span>
                     아직 팔로잉이 없어요.
@@ -61,8 +65,7 @@ const UserFollowings = () => {
                 } 
                 />
               </div>;
-    }
-
+    } 
 };
 
 const originalImage = `https://static.vecteezy.com/system/resources/previews/002/318/271/original/user-profile-icon-free-vector.jpg`;

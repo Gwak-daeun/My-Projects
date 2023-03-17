@@ -24,6 +24,9 @@ const One = styled.div`
   .card2{
     width: 110px;
   }
+  .li1{
+    margin-bottom: 20px;
+  }
 `;
 
 
@@ -48,14 +51,14 @@ const Mention = () => {
 
   const IfRefer = () => {
 
-      if(me.References[0] !== undefined){
-        return <li><FontAwesomeIcon icon={faPenNib} className="icons" />{me.References[0].content}</li>;
-      }
-      if(me.References[1] !== undefined){
-        return <li><FontAwesomeIcon icon={faPenNib} className="icons" />{me.References[1].content}</li>;
-      }
-      if(me.References[2] !== undefined){
-        return <li><FontAwesomeIcon icon={faPenNib} className="icons" />{me.References[2].content}</li>;
+    if(me.References.length !== 0){
+        return(
+          <One>
+            {me.References[0] ? <li className='li1'><FontAwesomeIcon icon={faPenNib} className="icons" />{me.References[0].content === '' ? me.nickname+"의 리트윗" :  me.References[0].content}</li> : null}
+            {me.References[1] ? <li className='li1'><FontAwesomeIcon icon={faPenNib} className="icons" />{me.References[1].content === '' ? me.nickname+"의 리트윗" :  me.References[1].content}</li> : null}
+            {me.References[2] ? <li className='li1'><FontAwesomeIcon icon={faPenNib} className="icons" />{me.References[2].content === '' ? me.nickname+"의 리트윗" :  me.References[2].content}</li> : null}
+          </One>
+        ); 
       }
       else{
         return  <div>
@@ -68,8 +71,6 @@ const Mention = () => {
                   />
                 </div>;
       }
-  
-
   };
 
     return(

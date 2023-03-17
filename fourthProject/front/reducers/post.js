@@ -183,7 +183,6 @@ const reducer = (state = initialState, action) => produce(state, (draft) => {
     case RETWEET_SUCCESS:
       draft.retweetLoading = false;
       draft.retweetDone = true;
-      draft.mainPosts.unshift(action.data); //리트윗된 게시글 메인포스트에 추가
       break;
     case RETWEET_FAILURE:
       draft.retweetLoading = false;

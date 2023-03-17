@@ -460,30 +460,8 @@ router.post('/:postId/reference', isLoggedIn, upload.none(), async (req, res, ne
         referSrc: src
         // lookName: 'Reference'
       });
-      const referenceWithPrevPost = await Post.findOne({
-        where: { id: newReference.PostId },
-        include: [{
-          model: Reference,
-          include: [{
-            model: User,
-            attributes: ['id', 'nickname'],
-          }, {
-            model: Image,
-          }]
-        }, {
-          model: User,
-          attributes: ['id', 'nickname'],
-        }, {
-          model: Image,
-        }, {
-          model: Comment,
-          include: [{
-            model: User,
-            attributes: ['id', 'nickname'],
-          }],
-        }],
-      })
-      res.status(201).json(referenceWithPrevPost);
+     
+      res.status(201).json(newReference);
     } catch (error) {
       console.error(error);
       next(error);

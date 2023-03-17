@@ -23,6 +23,9 @@ const One = styled.div`
   .a1{
     margin-left: 30px;
   }
+  .li1{
+    margin-bottom: 20px;
+  }
 `;
 
 const Followings = () => {
@@ -42,18 +45,19 @@ const Followings = () => {
 
   const IfFollowing = () => {
 
-    if(me.Followings[0] !== undefined){
-      return <li><FontAwesomeIcon icon={faSquare} className="icons" /> {me.Followings[0].nickname}</li>;
-    }
-    if(me.Followings[1] !== undefined){
-      return <li><FontAwesomeIcon icon={faSquare} className="icons" />{me.Followings[1].nickname}</li>;
-    }
-    if(me.Followings[2] !== undefined){
-      return <li><FontAwesomeIcon icon={faSquare} className="icons" />{me.Followings[2].nickname}</li>;
+    if(me.Followings.length !== 0){
+      return(
+        <One>
+          {me.Followings[0] ?  <li className='li1'><FontAwesomeIcon icon={faSquare} className="icons" /> {me.Followings[0].nickname}</li>  : null  }
+          {me.Followings[1] ?  <li className='li1'><FontAwesomeIcon icon={faSquare} className="icons" /> {me.Followings[1].nickname}</li>  : null  }
+          {me.Followings[2] ?  <li className='li1'><FontAwesomeIcon icon={faSquare} className="icons" /> {me.Followings[2].nickname}</li>  : null  }
+
+        </One>
+      ); 
     }
     else{
       return  <div>
-                <Empty 
+                <Empty
                 description={
                   <span>
                     아직 팔로잉이 없어요.
@@ -62,7 +66,6 @@ const Followings = () => {
                 />
               </div>;
     }
-
 };
 
 const originalImage = `https://static.vecteezy.com/system/resources/previews/002/318/271/original/user-profile-icon-free-vector.jpg`;

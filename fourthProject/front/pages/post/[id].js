@@ -161,7 +161,6 @@ const Post = () => {
         }
     }, [me && me.id, singlePost, updatePostDone, retweetError, retweetDone]);
 
- console.log("리트윗 내용: ", rtConent);
     const [content, setContent] = useState(singlePost.content);
 
     const onChangeContent = useCallback((e) => {
@@ -307,7 +306,7 @@ const Post = () => {
                 type: RETWEET_REQUEST,
                 data: formData
             }, setIsModalOpen(false));
-        }, [content]);
+        }, [rtConent]);
         
         //리트윗 모달 창 닫기
         const handleCancel = () => {

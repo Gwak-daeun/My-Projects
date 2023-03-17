@@ -18,6 +18,9 @@ const One = styled.div`
   .img1{
     width: 100%;
   }
+  .li1{
+    margin-bottom: 20px;
+  }
 `;
 
 const LikeList = () => {
@@ -35,28 +38,26 @@ const LikeList = () => {
   };
 
   const IfLike = () => {
-
-      if(me.Liked[0] !== undefined){
-        return <li><FontAwesomeIcon icon={faHeart} className='icons' /> {me.Liked[0].lookName}</li>;
-      }
-      if(me.Liked[1] !== undefined){
-        return <li><FontAwesomeIcon icon={faHeart} className='icons' />{me.Liked[1].lookName}</li>;
-      }
-      if(me.Liked[2] !== undefined){
-        return <li><FontAwesomeIcon icon={faHeart} className='icons' />{me.Liked[2].lookName}</li>;
-      }
-      else{
-        return  <div>
-                  <Empty
-                  description={
-                    <span>
-                      좋아요를 한 Look이 없어요.
-                    </span>
-                  } 
-                  />
-                </div>;
-      }
-  
+    if(me.Liked.length !== 0){
+      return(
+        <One>
+          {me.Liked[0] ? <li className='li1'><FontAwesomeIcon icon={faHeart} className='icons' /> {me.Liked[0].lookName}</li>  : null  }
+          {me.Liked[1] ? <li className='li1'><FontAwesomeIcon icon={faHeart} className='icons' /> {me.Liked[1].lookName}</li>  : null  }
+          {me.Liked[2] ? <li className='li1'><FontAwesomeIcon icon={faHeart} className='icons' /> {me.Liked[2].lookName}</li>  : null  }       
+        </One>
+      ); 
+    }
+    else{
+      return  <div>
+                <Empty
+                description={
+                  <span>
+                    좋아요를 한 Look이 없어요.
+                  </span>
+                } 
+                />
+              </div>;
+    }
   };
 
 
