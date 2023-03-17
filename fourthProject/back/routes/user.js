@@ -176,21 +176,12 @@ router.post('/logout', isLoggedIn, (req, res) => {
   });
 
 
-
-  router.post('/images', isLoggedIn, upload.array(), async(req, res, next) => { //array는 이미지를 여러장 올리기 위해서. 1장 올리려면 single, file input이 2개 이상일 땐 fills
-    console.log(req.files);
-    res.json(req.files.map((v) => v.filename));
-});
-
 //프로필 이미지 수정
-router.patch('/profileImage', isLoggedIn, upload.single('profile'), async(req, res, next) => { 
-console.log("이미지 파일:::::::" + JSON.stringify(req.files));
-    res.json(req.files.map((v) => v.location));
-
+router.patch('/profileImage', isLoggedIn, upload.none('profile'), async(req, res, next) => { 
   try{
-    
-    const image = await Image.update({
-      src: req.body.profile
+    console.log("이미지 수정 파일: ", req.file);
+    await Image.update({
+      src: req.file.filename
     },
       { 
         where: {
@@ -198,7 +189,7 @@ console.log("이미지 파일:::::::" + JSON.stringify(req.files));
         }
       }
     );
-    res.status(200).json({src: req.body.profile});
+    res.status(200).json({src: req.file.filename});
   }
   catch(error){
     console.error(error);
