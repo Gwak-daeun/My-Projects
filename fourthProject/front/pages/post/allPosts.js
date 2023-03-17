@@ -7,6 +7,7 @@ import { LOAD_POSTS_REQUEST } from "../../reducers/post";
 import wrapper from "../../store/configureStore";
 import AppLayout from "../../components/AppLayout";
 import styled from "styled-components";
+import Router from "next/dist/next-server/server/router";
 
 const OneAllPosts = styled.div`
 
