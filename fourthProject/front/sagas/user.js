@@ -271,7 +271,6 @@ function* signUp(action){
 }
 
 function uploadImagesAPI(data) {
-    console.log("saga image::::", data);
     return axios.patch('/user/profileImage', data);
   }
   

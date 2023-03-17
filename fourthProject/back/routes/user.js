@@ -185,7 +185,8 @@ router.post('/logout', isLoggedIn, (req, res) => {
 //프로필 이미지 수정
 router.patch('/profileImage', isLoggedIn, upload.single('profile'), async(req, res, next) => { 
   try{
-
+    console.log("이미지 파일:::::::" + JSON.stringify(req.files));
+    res.json(req.files.map((v) => v.location));
     const image = await Image.update({
       src: req.body.profile
     },
