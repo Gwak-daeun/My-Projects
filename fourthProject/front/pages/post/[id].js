@@ -161,7 +161,7 @@ const Post = () => {
         }
     }, [me && me.id, singlePost, updatePostDone, retweetError, retweetDone]);
 
-
+ console.log("리트윗 내용: ", rtConent);
     const [content, setContent] = useState(singlePost.content);
 
     const onChangeContent = useCallback((e) => {

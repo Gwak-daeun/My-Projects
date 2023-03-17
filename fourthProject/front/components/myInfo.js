@@ -119,7 +119,7 @@ const onChangeImages = useCallback((e) => {
           </OneMyInfo>
            :
            <OneMyInfo>
-            <img className="img1" src={me.Image.src}  />
+            <img className="img1" src={previewImg ? previewImg : me.Image.src}  />
            </OneMyInfo>
               }
         

@@ -130,7 +130,7 @@ const NewLook = () => {
 
     useEffect(() => {
         if(addPostDone === true){
-            Router.replace('/');
+            Router.push('/');
         }  
     }, [addPostDone]);
 
