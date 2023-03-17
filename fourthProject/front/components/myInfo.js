@@ -76,24 +76,27 @@ const onChangeImages = useCallback((e) => {
     });
 });
 
-//유저 정보 수정 요청
-const onSubmit = useCallback(() => {
-  const formData = new FormData();
-  
-      formData.append('profile', imagePaths);
-  
-  formData.append('info', myText);
-  console.log('text: ' + myText);
-  dispatch({ 
-      type: CHANGE_INFO_REQUEST,
-      data: formData,
-   }
-   );
-},[myText, imagePaths]);
+    //유저 정보 수정 요청
+    const onSubmit = useCallback(() => {
+      const formData = new FormData();
+      
+      imagePaths.forEach((p) => {
+        formData.append('profile', p);
+      });
 
-const cancelFix = useCallback(() => {
-  setRead((prev) => !prev);
-});
+      formData.append('info', myText);
+      formData.append('UserId', me.id);
+
+      dispatch({ 
+          type: CHANGE_INFO_REQUEST,
+          data: formData,
+      }
+      );
+    },[myText, imagePaths]);
+
+    const cancelFix = useCallback(() => {
+      setRead((prev) => !prev);
+    });
 
     return(
         <div>

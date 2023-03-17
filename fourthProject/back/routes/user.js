@@ -178,23 +178,8 @@ router.post('/logout', isLoggedIn, (req, res) => {
 
 //프로필 이미지 수정
 router.patch('/profileImage', isLoggedIn, upload.array('profile'), async(req, res, next) => { 
-  try{
-    console.log("이미지 수정 파일: ", req.body.profile);
-    await Image.update({
-      src: req.body.profile
-    },
-      { 
-        where: {
-          UserId: req.user.id
-        }
-      }
-    );
-    res.status(200).json({src: req.body.profile});
-  }
-  catch(error){
-    console.error(error);
-    next(error);
-}
+    console.log("이미지 수정 파일: ", req.files);
+    res.json(req.files.map((v) => v.location));
 });
 
 
@@ -208,6 +193,11 @@ router.patch('/info', isLoggedIn, upload.none('image'), async(req, res, next) =>
             id: req.user.id
           } 
         });
+
+        if(req.body.profile){
+          console.log("게시글 수정 이미지: " + req.body.profile);
+          await Image.update({src: req.body.profile},{where: {UserId: req.body.UserId}});
+        }
        
         res.status(200).json({info: req.body.info});
     }
