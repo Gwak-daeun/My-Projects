@@ -62,7 +62,7 @@ const NewComment = ({post}) => {
         const imageFormData = new FormData();
           setFileList(fileList);
         for(let i = 0; i< fileList.length; i++){
-          formData.append('image', fileList[i].originFileObj);
+          imageFormData.append('image', fileList[i].originFileObj);
         }
         
         if (isUploading) {
@@ -73,10 +73,6 @@ const NewComment = ({post}) => {
         dispatch({
           type: NEW_COMMENT_IMAGES_REQUEST,
           data: imageFormData,
-        }).then(() => {
-          setIsUploading(false);
-        }).catch(() => {
-          setIsUploading(false);
         });
       
         return false;
