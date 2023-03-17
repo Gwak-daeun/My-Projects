@@ -54,18 +54,22 @@ const NewComment = ({post}) => {
 
 
       const onChangeImages = useCallback(({ fileList: newFileList }) => {
-        setFileList(newFileList);
+      setFileList(newFileList);
+      
       }, []);
 
       const beforeUpload = (file) => {
         const imageFormData = new FormData();
-        fileList.forEach(f => imageFormData.append('image', f.originFileObj));
-        imageFormData.append('image', file.originFileObj);
+        for (let i = 0; i < fileList.length; i++) {
+          imageFormData.append('image', fileList[i].originFileObj);
+        }
+        imageFormData.append('image', file);
+        
         
         if (isUploading) {
           return false;
         }
-        console.log("댓글 이미지 등록", fileList);
+        
         setIsUploading(true);
         dispatch({
           type: NEW_COMMENT_IMAGES_REQUEST,
