@@ -11,9 +11,6 @@ import { END } from 'redux-saga';
 const Home = () => {
 
     const {me} = useSelector((state) => state.user);
-    const {mainPosts} = useSelector((state) => state.post);
-    console.log("인덱스 데이터", me);
-   console.log("인덱스 mainposts: ", mainPosts);
 
 return (
     <AppLayout>

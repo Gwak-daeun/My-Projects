@@ -7,7 +7,6 @@ import { LOAD_POSTS_REQUEST } from "../../reducers/post";
 import wrapper from "../../store/configureStore";
 import AppLayout from "../../components/AppLayout";
 import styled from "styled-components";
-import Router from "next/dist/next-server/server/router";
 
 const OneAllPosts = styled.div`
 
@@ -30,10 +29,7 @@ const AllPosts = () => {
     const {mainPosts, hasMorePosts, loadPostsLoading, retweetError} = useSelector((state) => state.post);
 
     useEffect(() => {
-        if(!(me && me.id)) {
-            alert("로그인 후 이용 가능합니다.");
-            Router.push('/');
-        }
+
         function onScroll(){
             if(window.scrollY + document.documentElement.clientHeight > document.documentElement.scrollHeight - 300){
                 if(hasMorePosts && !loadPostsLoading){
