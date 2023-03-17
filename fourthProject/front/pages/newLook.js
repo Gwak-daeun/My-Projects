@@ -123,22 +123,24 @@ const NewLook = () => {
     const [ content, onChangeContent, setContent ] = useInput('');
 
     useEffect(() => {
+        dispatch({
+            type: LOAD_NEW_POSTS_REQUEST
+        });
+    }, []);
 
+    useEffect(() => {
+        if(addPostDone === true){
+            Router.replace('/');
+        }  
+    }, [addPostDone]);
+
+    useEffect(() => {
         if(!(me && me.id)) {
             alert("로그인 후 이용 가능합니다.");
             Router.push('/');
         }
+    }, [me && me.id]);
 
-        if(addPostDone === true){
-            Router.replace('/');
-        }  
-        dispatch({
-            type: LOAD_NEW_POSTS_REQUEST
-        });
-
-    }, [addPostDone, me && me.id]);
-
-    console.log("메인포스트: ", mainPosts);
 
     const today = new Date();
     const year = today.getFullYear(); // 년도
