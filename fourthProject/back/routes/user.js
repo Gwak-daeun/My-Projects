@@ -177,11 +177,11 @@ router.post('/logout', isLoggedIn, (req, res) => {
 
 
 //프로필 이미지 수정
-router.patch('/profileImage', isLoggedIn, upload.none('profile'), async(req, res, next) => { 
+router.patch('/profileImage', isLoggedIn, upload.array('profile'), async(req, res, next) => { 
   try{
-    console.log("이미지 수정 파일: ", req.file);
+    console.log("이미지 수정 파일: ", req.body.profilee);
     await Image.update({
-      src: req.file.filename
+      src: req.body.profile
     },
       { 
         where: {
@@ -189,7 +189,7 @@ router.patch('/profileImage', isLoggedIn, upload.none('profile'), async(req, res
         }
       }
     );
-    res.status(200).json({src: req.file.filename});
+    res.status(200).json({src: req.body.profile});
   }
   catch(error){
     console.error(error);
