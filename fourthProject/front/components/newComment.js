@@ -53,30 +53,21 @@ const NewComment = ({post}) => {
     };
 
 
-      const onChangeImages = useCallback(({ fileList: newFileList }) => {
-      setFileList(newFileList);
-      }, []);
+    const onChangeImages = useCallback(({ fileList: newFileList }) => {
+  
+    setFileList(newFileList);
+    console.log('images', fileList);
+    const imageFormData = new FormData();
+    
+    for(let i = 0; i< fileList.length; i++){
+      imageFormData.append('image', fileList[i].originFileObj);
+    }
 
-      const beforeUpload = (file) => {
-
-        const imageFormData = new FormData();
-          setFileList(fileList);
-        for(let i = 0; i< fileList.length; i++){
-          imageFormData.append('image', fileList[i].originFileObj);
-        }
-        
-        if (isUploading) {
-          return false;
-        }
-        
-        setIsUploading(true);
-        dispatch({
-          type: NEW_COMMENT_IMAGES_REQUEST,
-          data: imageFormData,
-        });
-      
-        return false;
-      };
+      return dispatch({
+          type: UPLOAD_IMAGES_REQUEST,
+          data: imageFormData
+      });
+    });
 
       //미리보기
       const onPreview = async (file) => {
