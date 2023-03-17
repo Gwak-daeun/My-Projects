@@ -60,7 +60,7 @@ const NewComment = ({post}) => {
 
       const beforeUpload = (file) => {
         const imageFormData = new FormData();
-        for (let i = 0; i < fileList.length; i++) {
+        for (let i = 0; i < fileList.length + 1; i++) {
           imageFormData.append('image', fileList[i].originFileObj);
         }
         imageFormData.append('image', file);
