@@ -36,6 +36,8 @@ const Mention = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  console.log("멘션 me 확인: ", me);
+
   const referModal = () => {
     setIsModalOpen(true);
   };
