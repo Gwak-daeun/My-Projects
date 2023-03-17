@@ -40,6 +40,7 @@ const MyInfo = () => {
   useEffect(() => {
     if(changeInfoDone){
       window.alert("내 정보 수정 완료!");
+      setRead(true);
     }
   }, [changeInfoDone]);
 
@@ -115,7 +116,7 @@ const cancelFix = useCallback(() => {
           </OneMyInfo>
            :
            <OneMyInfo>
-            <img className="img1" src={previewImg ? previewImg : me.Image.src}  />
+            <img className="img1" src={me.Image.src}  />
            </OneMyInfo>
               }
         
