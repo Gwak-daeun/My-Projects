@@ -201,7 +201,7 @@ const reducer = (state = initialState, action) => produce(state, (draft) => {
         case NEW_COMMENT_IMAGES_SUCCESS:
       {
         console.log("reducer image", action.data);
-        draft.imagePaths = action.data;
+        draft.imagePaths = draft.imagePaths.concat(action.data);
         draft.uploadImagesLoading = false;
         draft.uploadImagesDone = true;
         break;
