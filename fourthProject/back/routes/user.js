@@ -26,6 +26,7 @@ router.get('/', async (req, res, next) => { // GET /user
           model: Post
         }, {
           model: User,
+          order: [['createdAt', 'DESC']],
           as: 'Followings',
           attributes: ['id', 'nickname'],
                     include:[{
@@ -33,6 +34,7 @@ router.get('/', async (req, res, next) => { // GET /user
                     }]
         }, {
           model: User,
+          order: [['createdAt', 'DESC']],
           as: 'Followers',
           attributes: ['id', 'nickname'],
                     include:[{
@@ -40,6 +42,7 @@ router.get('/', async (req, res, next) => { // GET /user
                     }]
         },{
           model: Post,
+          order: [['createdAt', 'DESC']],
           as: 'Liked',
           include: [{
             model: Image
@@ -47,9 +50,10 @@ router.get('/', async (req, res, next) => { // GET /user
         }, {
           model: Image
         },{
-          model: Reference
+          model: Reference,
+          order: [['createdAt', 'DESC']],
         }]
-      })
+      });
       res.status(200).json(fullUserWithoutPassword);
     } else {
       res.status(200).json(null);
@@ -77,44 +81,48 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
                 console.error(loginErr);
                 return next(loginErr);
             }
-           const fullUserWithoutPassword = await User.findOne({
-                where : {id: user.id},
-                attributes: {
-                    exclude: ['password'] 
-                },
-                include: [{
-                    model:Post,
-                    attributes: ['id']
-                },
-                {
-                    model: User,
-                    as: 'Followings',
-                    attributes: ['id', 'nickname'],
-                    include:[{
-                      model: Image
-                    }]
-                },
-                {
-                    model: User,
-                    as: 'Followers',
-                    attributes: ['id', 'nickname'],
-                    include:[{
-                      model: Image
-                    }]
-                },{
-                  model: Post,
-                  as: 'Liked',
-                  include: [{
+            const fullUserWithoutPassword = await User.findOne({
+              where : {id: user.id},
+              attributes: {
+                  exclude: ['password'] 
+              },
+              include: [{
+                  model:Post,
+                  order: [['createdAt', 'DESC']],
+                  attributes: ['id']
+              },
+              {
+                  model: User,
+                  order: [['createdAt', 'DESC']],
+                  as: 'Followings',
+                  attributes: ['id', 'nickname'],
+                  include:[{
                     model: Image
                   }]
-                },{
+              },
+              {
+                  model: User,
+                  order: [['createdAt', 'DESC']],
+                  as: 'Followers',
+                  attributes: ['id', 'nickname'],
+                  include:[{
+                    model: Image
+                  }]
+              },{
+                model: Post,
+                as: 'Liked',
+                include: [{
                   model: Image
-                },
-                {
-                  model: Reference
-                }
-            ]
-            });
+                }]
+              },{
+                model: Image
+              },
+              {
+                model: Reference,
+                order: [['createdAt', 'DESC']],
+              }
+          ]
+          });
 
             return res.status(200).json(fullUserWithoutPassword);
         });

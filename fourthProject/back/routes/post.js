@@ -149,7 +149,6 @@ router.post('/', isLoggedIn, upload.single(), async(req, res, next) => {
 
 //게시글 수정
 router.patch('/:postId', isLoggedIn, upload.array('image'), async(req, res, next) => {
-  console.log("수정 바디 확인: ", req.body);
   try{
     const postUpdateResult = await Post.update({
       content: req.body.content,
@@ -164,7 +163,7 @@ router.patch('/:postId', isLoggedIn, upload.array('image'), async(req, res, next
       where: { id: req.body.postId }
     });
 
-    if (postUpdateResult[0] === 0) {
+    if (postUpdateResult[0] === 0 && !req.body.image) {
       // 업데이트된 row가 없을 경우 에러 처리
       return res.status(400).send('수정된 내용이 없습니다.');
     }

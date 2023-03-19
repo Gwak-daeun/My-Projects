@@ -9,6 +9,7 @@ import Router from "next/router";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faNoteSticky } from "@fortawesome/free-regular-svg-icons";
 import styled from "styled-components";
+import useInput2 from "../hooks/useInput2";
 
 const OneNewLook = styled.div`
 
@@ -110,7 +111,7 @@ const NewLook = () => {
     const [shoes, onChangeShoes ,setShoes] = useInput('');
     const [acc, onChangeAcc ,setAcc] = useInput('');
     const [outer, onChangeOuter ,setOuter] = useInput('');
-    const [lookName, onChangeLookName ,setLookName] = useInput('');
+    const [lookName, onChangeLookName] = useInput2('');
 
     const {imagePaths, addPostDone, mainPosts, newLookKeywords} = useSelector((state) => state.post);
 
@@ -120,7 +121,7 @@ const NewLook = () => {
 
     const words = newLookKeywords?.map(items => ({value: items.name}));
 
-    const [ content, onChangeContent, setContent ] = useInput('');
+    const [ content, onChangeContent ] = useInput2('');
 
     useEffect(() => {
         dispatch({

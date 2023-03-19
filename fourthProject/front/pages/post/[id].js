@@ -21,9 +21,9 @@ import { faHeartCrack } from '@fortawesome/free-solid-svg-icons';
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import NoComments from '../../components/noComments';
 import '../css/post[id].module.css';
-import useInput from '../../hooks/useInput';
 const { Meta } = Card;
 import styled from 'styled-components';
+import useInput2 from '../../hooks/useInput2';
 
 const OneLook = styled.div`
 
@@ -138,84 +138,48 @@ const Post = () => {
     const [read, setRead] = useState(true);
     const [previewImg, setPreviewImg] = useState(null);
 
-    const [rtConent, onChangeRtContent, setRtContent] = useInput('');
+    const [rtConent, onChangeRtContent] = useInput2('');
+    const [top, onChangeTop] = useInput2(singlePost.top);
+    const [bottom, onChangeBottom ] = useInput2(singlePost.bottom);
+    const [dress, onChangeDress ] = useInput2(singlePost.dress);
+    const [shoes, onChangeShoes ] = useInput2(singlePost.shoes);
+    const [acc, onChangeAcc ] = useInput2(singlePost.acc);
+    const [outer, onChangeOuter ] = useInput2(singlePost.outer);
+    const [lookName, onChangeLookName ] = useInput2(singlePost.lookName);
+    const [content, onChangeContent ] = useInput2(singlePost.content);
 
+    //로그인 아이디와 게시글 아이디가 같으면 수정, 삭제 활성화
     useEffect(() => {
         if(!(me && me.id)) {
             alert("로그인 후 이용 가능합니다.");
             Router.push('/');
         }
-        //로그인 아이디와 게시글 아이디가 같으면 수정, 삭제 활성화
+    }, [singlePost]);
+    useEffect(() => {
         if(me.id === singlePost.UserId){
             setRead(false);
         }
+    }, [me && me.id]);
+
+    useEffect(() => {
         if(updatePostDone === true){
             window.alert('Look 수정 완료.')
         }
+    }, [updatePostDone]);
+
+    useEffect(() => {
         if(retweetError){
             window.alert(retweetError);
             window.location.reload();
         }
+    }, [retweetError]);
+
+    useEffect(() => {
         if(retweetDone === true){
             window.alert('인용 완료!');
         }
-    }, [me && me.id, singlePost, updatePostDone, retweetError, retweetDone]);
+    }, [retweetDone]);
 
-    const [content, setContent] = useState(singlePost.content);
-
-    const onChangeContent = useCallback((e) => {
-        const contentValue = e.target.value;
-        setContent(contentValue);
-      }, []);
-
-    const [top, setTop] = useState(singlePost.top);
-
-    const onChangeTop = useCallback((e) => {
-        const topValue = e.target.value;
-        setTop(topValue);
-    }, []);
-
-    const [bottom, setBottom] = useState(singlePost.bottom);
-
-    const onChangeBottom = useCallback((e) => {
-    const bottomValue = e.target.value;
-    setBottom(bottomValue);
-    }, []);
-
-    const [dress, setDress] = useState(singlePost.dress);
-
-    const onChangeDress = useCallback((e) => {
-        const dressValue = e.target.value;
-        setDress(dressValue);
-        }, []);
-
-        const [shoes, setShoes] = useState(singlePost.shoes);
-
-    const onChangeShoes = useCallback((e) => {
-    const shoesValue = e.target.value;
-    setShoes(shoesValue);
-    }, []);
-
-    const [acc, setAcc] = useState(singlePost.acc);
-
-    const onChangeAcc = useCallback((e) => {
-        const accValue = e.target.value;
-        setAcc(accValue);
-        }, []);
-
-    const [outer, setOuter] = useState(singlePost.outer);
-
-    const onChangeOuter = useCallback((e) => {
-    const outerValue = e.target.value;
-    setOuter(outerValue);
-    }, []);
-
-    const [lookName, setLookName] = useState(singlePost.lookName);
-
-    const onChangeLookName = useCallback((e) => {
-        const lookNameValue = e.target.value;
-        setLookName(lookNameValue);
-        }, []);
 
     const imageInput = useRef();
 

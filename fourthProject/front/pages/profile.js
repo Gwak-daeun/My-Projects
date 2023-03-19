@@ -84,15 +84,20 @@ console.log(todayDateString);
             alert("로그인 후 이용 가능합니다.");
             Router.push('/');
         }
+    }, [me && me.id]);
 
+    useEffect(() => {
         if(checkDateError){
             window.alert(checkDateError);
             window.location.reload();
         }
+    }, [checkDateError]);
+
+    useEffect(() => {
         if(checkDateDone === true){
             Router.push(`/newLook`);
         }
-    }, [checkDateError, checkDateDone, me && me.id]);
+    }, [checkDateDone]);
 
  return(
     <OneProfile>
