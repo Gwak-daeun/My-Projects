@@ -5,10 +5,13 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
-const Li = styled.li`
-  .ficon{
-    font-size: 15px;
-  }
+const Item = styled.div`
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
 `;
 
 const OneFollwer = styled.div`
@@ -21,9 +24,6 @@ const OneFollwer = styled.div`
   }
   .img1{
     width: 100%;
-  }
-  .a1{
-    margin-left: 30px;
   }
   .li1{
     margin-bottom: 20px;
@@ -96,12 +96,12 @@ const Followers = () => {
               dataSource={me.Followers}
               renderItem={(items) => (
                 <List.Item>
-                  <OneFollwer>
+                  <Item>
                     <a href={`http://fashionary.site/user/${items.id}`} >
                     <Avatar size={100} src={items.Image.src === originalImage ? originalImage : items.Image.src} />
                   </a>
-                  <a className='a1' href={`http://fashionary.site/user/${items.id}`} >{items.nickname}</a>
-                  </OneFollwer>
+                  <a href={`http://fashionary.site/user/${items.id}`} >{items.nickname}</a>
+                  </Item>
                 </List.Item>
             )}
             >

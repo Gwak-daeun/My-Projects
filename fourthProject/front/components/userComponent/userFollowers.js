@@ -5,10 +5,13 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
-const Li = styled.li`
-  .fIcon{
-    font-size: 15px;
-  }
+const Item = styled.div`
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
 `;
 
 const OneUserFollower = styled.div`
@@ -21,9 +24,6 @@ const OneUserFollower = styled.div`
   }
   .img1{
     width: 100%;
-  }
-  .a1{
-    margin-left: 30px;
   }
   .li1{
     margin-bottom: 20px;
@@ -96,18 +96,12 @@ const UserFollowers = () => {
               dataSource={userInfo.Followers}
               renderItem={(items) => (
                 <List.Item>
-                  <OneUserFollower>
-                    {/* <Card
-                    className='card2'
-                    title={<a href={`http://localhost:3000/post/${item.id}`} >{item.nickname}</a>}
-                    cover={<a href={`http://localhost:3000/post/${item.id}`} ><OneUserFollower><img className='img1'alt="example" src={item.Image.src === originalImage ? originalImage : `http://localhost:3065/${item.Image.src}`} /></OneUserFollower></a>}
-                    >
-                    </Card> */}
+                  <Item>
                     <a href={`http://fashionary.site/user/${items.id}`} >
                     <Avatar size={100} src={items.Image.src === originalImage ? originalImage : items.Image.src} />
                     </a>
-                  <a className='a1' href={`http://fashionary.site/user/${items.id}`} >{items.nickname}</a>
-                  </OneUserFollower>
+                  <a href={`http://fashionary.site/user/${items.id}`} >{items.nickname}</a>
+                  </Item>
                 </List.Item>
             )}
             >

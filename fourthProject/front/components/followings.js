@@ -5,6 +5,15 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
+const Item = styled.div`
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+`;
+
 const One = styled.div`
   .icons{
     font-size:15px;
@@ -19,9 +28,6 @@ const One = styled.div`
   }
   .card2{
     width: 110px;
-  }
-  .a1{
-    margin-left: 30px;
   }
   .li1{
     margin-bottom: 20px;
@@ -91,12 +97,12 @@ const originalImage = `https://static.vecteezy.com/system/resources/previews/002
               dataSource={me.Followings}
               renderItem={(items) => (
                 <List.Item>
-                  <One>
+                  <Item>
                   <a href={`http://fashionary.site/user/${items.id}`} >
                     <Avatar size={100} src={items.Image.src === originalImage ? originalImage : items.Image.src} />
                   </a>
-                  <a className='a1' href={`http://fashionary.site/user/${items.id}`} >{items.nickname}</a>
-                  </One>
+                  <a href={`http://fashionary.site/user/${items.id}`} >{items.nickname}</a>
+                  </Item>
                 </List.Item>
             )}
             >
