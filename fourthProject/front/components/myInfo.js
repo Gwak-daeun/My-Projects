@@ -40,12 +40,15 @@ const MyInfo = () => {
   useEffect(() => {
     if(changeInfoDone){
       window.alert("내 정보 수정 완료!");
-      setRead(true);
     }
+
+  }, [changeInfoDone]);
+
+  useEffect(() => {
     if(read === false){
       setMyText(me.info);
     }
-  }, [changeInfoDone, read]);
+  }, [read]);
 
   const onClickImageUpload = useCallback(() => {
     imageInput.current.click();
