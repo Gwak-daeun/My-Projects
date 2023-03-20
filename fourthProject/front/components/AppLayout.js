@@ -49,13 +49,13 @@ const AppLayout = ({children}) => {
                <Menu id="menu1" mode='horizontal'>    
                
                 <Menu.Item >
-                <Link href="/"><h1 className="item1" >FASHIONARY</h1></Link>
+                <Link prefetch={false} href="/"><h1 className="item1" >FASHIONARY</h1></Link>
                 </Menu.Item>
                 <Menu.Item>
-                <Link href="/profile"><h3 className="item1" >My Profile</h3></Link>
+                <Link prefetch={false} href="/profile"><h3 className="item1" >My Profile</h3></Link>
                 </Menu.Item >
                 <Menu.Item>
-                <Link href="/post/allPosts"><h3 className="item1" >All Looks</h3></Link>
+                <Link prefetch={false} href="/post/allPosts"><h3 className="item1" >All Looks</h3></Link>
                 </Menu.Item> 
                 <Menu.Item className="item2">
                     <Tooltip title='찾고 싶은 브랜드를 검색해보세요.'>
