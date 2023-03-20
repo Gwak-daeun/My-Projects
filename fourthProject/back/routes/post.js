@@ -35,7 +35,7 @@ const upload = multer({
 });
 router.post('/images', isLoggedIn, upload.array('image'), async(req, res, next) => {
     console.log("req.files:::::::" + JSON.stringify(req.files));
-    res.json(req.files.map((v) => v.location.replace(/\/original\//, '/thumb/')));
+    res.json(req.files.map((v) => v.location));
 });
 
 //오늘 등록된 게시글이 있는지 확인 후, 있으면 에러처리
