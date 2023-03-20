@@ -313,6 +313,7 @@ router.get('/:id', async (req, res, next) => { // GET /user/3
           model: Post
         }, {
           model: User,
+          order: [['createdAt', 'DESC']],
           as: 'Followings',
           attributes: ['id', 'nickname'],
                     include:[{
@@ -320,6 +321,7 @@ router.get('/:id', async (req, res, next) => { // GET /user/3
                     }]
         }, {
           model: User,
+          order: [['createdAt', 'DESC']],
           as: 'Followers',
           attributes: ['id', 'nickname'],
                     include:[{
@@ -327,6 +329,7 @@ router.get('/:id', async (req, res, next) => { // GET /user/3
                     }]
         },{
           model: Post,
+          order: [['createdAt', 'DESC']],
           as: 'Liked',
           include: [{
             model: Image
@@ -334,9 +337,10 @@ router.get('/:id', async (req, res, next) => { // GET /user/3
         }, {
           model: Image
         },{
-          model: Reference
+          model: Reference,
+          order: [['createdAt', 'DESC']],
         }]
-      })
+      });
       if (fullUserWithoutPassword) {
         res.status(200).json(fullUserWithoutPassword);
 
