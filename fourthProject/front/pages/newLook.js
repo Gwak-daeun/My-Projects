@@ -125,6 +125,8 @@ const NewLook = () => {
 
     const [ content, onChangeContent ] = useInput2('');
 
+    console.log("이미지경로: ", imagePaths.length);
+
     useEffect(() => {
         dispatch({
             type: LOAD_NEW_POSTS_REQUEST
