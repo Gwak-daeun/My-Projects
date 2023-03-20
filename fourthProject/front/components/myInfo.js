@@ -42,7 +42,10 @@ const MyInfo = () => {
       window.alert("내 정보 수정 완료!");
       setRead(true);
     }
-  }, [changeInfoDone]);
+    if(read === false){
+      setMyText(me.info);
+    }
+  }, [changeInfoDone, read]);
 
   const onClickImageUpload = useCallback(() => {
     imageInput.current.click();
@@ -90,7 +93,7 @@ const onChangeImages = useCallback((e) => {
       dispatch({ 
           type: CHANGE_INFO_REQUEST,
           data: formData,
-      }
+      }, setRead(true)
       );
     },[myText, imagePaths]);
 
@@ -144,7 +147,7 @@ const onChangeImages = useCallback((e) => {
       description={
         read
         ?
-        <Input  readOnly={read} defaultValue={ me.info === null ? "자기자신을 한 단어로 표현한다면?" : "한마디:  " + myText} />
+        <Input  readOnly={read} value={ me.info === null ? "자기자신을 한 단어로 표현한다면?" : "한마디:  " + myText} />
         :
         <Input  readOnly={read} placeholder={me.info} onChange={onChangeMyText} value={myText} /> 
       }
