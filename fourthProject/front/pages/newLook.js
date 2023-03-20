@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useCallback, useEffect, useRef, useState } from "react";
 import useInput from "../hooks/useInput";
 import { ADD_POST_REQUEST, LOAD_NEW_POSTS_REQUEST, UPLOAD_IMAGES_REQUEST } from "../reducers/post";
+import Router, { useRouter } from "next/router";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faNoteSticky } from "@fortawesome/free-regular-svg-icons";
 import styled from "styled-components";
@@ -104,6 +105,8 @@ const NewLook = () => {
 
     const imageInput = useRef();
 
+    const router = useRouter();
+
     const [top, onChangeTop ,setTop] = useInput('');
     const [bottom, onChangeBottom ,setBottom] = useInput('');
     const [dress, onChangeDress ,setDress] = useInput('');
@@ -132,14 +135,14 @@ const NewLook = () => {
 
     useEffect(() => {
         if(addPostDone === true){
-            window.location.href = '/';
+            router.push('/');
         }  
     }, [addPostDone]);
 
     useEffect(() => {
         if(!(me && me.id)) {
             alert("로그인 후 이용 가능합니다.");
-            window.location.href = '/';
+            router.push('/');
         }
     }, [me && me.id]);
 
