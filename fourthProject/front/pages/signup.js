@@ -37,7 +37,7 @@ const OneMyInfo = styled.div`
 const Signup = () => {
 
   const dispatch = useDispatch();
-    const {signUpLoading, signUpDone, signUPError, me} = useSelector((state) => state.user);
+    const {signUpLoading, signUpDone, signUpError, me} = useSelector((state) => state.user);
 
   const [nickname, onChangeNickname] = useInput('');
   const [password, onChangePassword] = useInput('');
@@ -84,8 +84,8 @@ useEffect(() => {
 }, [signUpDone]);
 
 useEffect(() => {
-    if(signUPError){
-        alert(signUPError);
+    if(signUpError){
+        alert(signUpError);
     }
 }, [signUPError]);
 
