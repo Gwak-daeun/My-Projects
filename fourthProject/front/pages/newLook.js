@@ -137,11 +137,11 @@ const NewLook = () => {
     }, [addPostDone]);
 
     useEffect(() => {
-        if(!(me && me.id)) {
+        if(!me) {
             alert("로그인 후 이용 가능합니다.");
             window.location.href = '/';
         }
-    }, [me && me.id]);
+    }, [me]);
 
 
     const today = new Date();
