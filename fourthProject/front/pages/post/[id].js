@@ -148,13 +148,15 @@ const Post = () => {
     const [lookName, onChangeLookName ] = useInput2(singlePost.lookName);
     const [content, onChangeContent ] = useInput2(singlePost.content);
 
-    //로그인 아이디와 게시글 아이디가 같으면 수정, 삭제 활성화
+    
     useEffect(() => {
-        if(!(me && me.id)) {
+        if(!me) {
             alert("로그인 후 이용 가능합니다.");
-            Router.push('/');
+            window.location.href = '/';
         }
-    }, [singlePost]);
+    }, [me]);
+
+    //로그인 아이디와 게시글 아이디가 같으면 수정, 삭제 버튼 활성화
     useEffect(() => {
         if(me.id === singlePost.UserId){
             setRead(false);

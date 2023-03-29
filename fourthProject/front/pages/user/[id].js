@@ -49,11 +49,11 @@ const User = () => {
 
     
     useEffect(() => {
-        if(!(me && me.id)) {
+        if(!me) {
             alert("로그인 후 이용 가능합니다.");
-            Router.push('/');
+            window.location.href = '/';
         }
-    }, [me && me.id]);
+    }, [me]);
 
     useEffect(() => {
     //다른 유저 프로필로 이동 시, 접속 중인 아이디와 같은지 비교 후 같다면 홈화면으로 이동

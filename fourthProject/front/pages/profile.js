@@ -82,7 +82,7 @@ console.log(todayDateString);
 
         if(!(me && me.id)) {
             alert("로그인 후 이용 가능합니다.");
-            Router.push('/');
+            window.location.href = '/';
         }
     }, [me && me.id]);
 
@@ -101,33 +101,39 @@ console.log(todayDateString);
 
  return(
     <OneProfile>
-    <div className="div1">
-        <section className="section1">
-            <Row><h1>MY Profile</h1></Row>
-                <Row><Button  className="button1" onClick={checkDate}>오늘의 데일리룩 만들기</Button></Row>
-                <Row>
+      {
+            me
+            ?
+        <div className="div1">
+            <section className="section1">
+                <Row><h1>MY Profile</h1></Row>
+                    <Row><Button  className="button1" onClick={checkDate}>오늘의 데일리룩 만들기</Button></Row>
+                    <Row>
+                        <div className="div2">
+                            <Card>
+                                <Calendar 
+                                id='cal'
+                                className="cal1"
+                                dateCellRender={DateCellRender}
+                                />
+    
+                            </Card>
+                        </div>
                     <div className="div2">
-                        <Card>
-                            <Calendar 
-                            id='cal'
-                            className="cal1"
-                            dateCellRender={DateCellRender}
-                            />
-
-                        </Card>
+                        <MyInfo /> 
+                        <Mention />
+                        <LikeList />
                     </div>
-                <div className="div2">
-                    <MyInfo /> 
-                    <Mention />
-                    <LikeList />
-                </div>
-            </Row>
-            <Row className="row1">
-                <Followers  />
-                <Followings  />   
-            </Row>  
-        </section>
-    </div>
+                </Row>
+                <Row className="row1">
+                    <Followers  />
+                    <Followings  />   
+                </Row>  
+            </section>
+        </div>
+            :
+            null
+    }
     </OneProfile>
 
  );
