@@ -7,6 +7,7 @@ import { LOAD_POSTS_REQUEST } from "../../reducers/post";
 import wrapper from "../../store/configureStore";
 import AppLayout from "../../components/AppLayout";
 import styled from "styled-components";
+import Meta from "antd/lib/card/Meta";
 
 const OneAllPosts = styled.div`
 
@@ -66,6 +67,7 @@ const AllPosts = () => {
                         
                         cover={<a href={`http://fashionary.site/post/${items.id}`} ><img className="img1" alt="example" src={items?.Images[0]?.src} /></a>}
                         >
+                        <Meta title={'writer: ' + items.User.nickname} />    
                         </Card>
                     </List.Item>
                 )}

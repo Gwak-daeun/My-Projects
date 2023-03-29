@@ -17,6 +17,12 @@ const OneSore = styled.div`
   .button1{
     margin-left: 100px;
   }
+  .date{
+    margin-left: 60px;
+  }
+  .writer{
+    color: black;
+  }
 `;
 
 const Score = ({comments}) => {
@@ -24,11 +30,16 @@ const Score = ({comments}) => {
     return(
         <>
         <OneSore>
-        <Row><h2>My rate is...</h2></Row>
-               <Row>
+        <Row>
                {comments.map(comment => (
             <li key={comment.id}>
-              <OneSore><Rate className="rate1" disabled defaultValue={comment.rate} /></OneSore> 
+              <Row>
+               <h4> writer: <a className="writer" href={`http://localhost:3000/user/${comment.UserId}`}>{comment.User.nickname}</a> </h4>
+                
+              <h4 className="date"> date: {result}</h4> 
+                </Row>
+              <Row><h2>My rate is...</h2></Row>
+              <Row><OneSore><Rate className="rate1" disabled defaultValue={comment.rate} /></OneSore></Row>  
             </li>
              ))}
                 </Row>  
