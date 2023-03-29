@@ -27,6 +27,12 @@ const OneSore = styled.div`
 
 const Score = ({comments}) => {
 
+  const date = new Date(comments[0].createdAt);
+  const yyyy = date.getFullYear();
+  const mm = String(date.getMonth() + 1).padStart(2, '0');
+  const dd = String(date.getDate()).padStart(2, '0');
+  const result = `${yyyy}년${mm}월${dd}일`;
+
     return(
         <>
         <OneSore>
