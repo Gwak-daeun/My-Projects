@@ -87,7 +87,7 @@ useEffect(() => {
     if(signUpError){
         alert(signUpError);
     }
-}, [signUPError]);
+}, [signUpError]);
 
 return(
   <AppLayout>
