@@ -76,7 +76,7 @@ router.post('/checkDate', isLoggedIn, upload.none(), async(req, res, next) => {
 });
 
 //게시글 등록
-router.post('/', isLoggedIn, upload.none('image'), async(req, res, next) => {
+router.post('/', isLoggedIn, upload.array('image'), async(req, res, next) => {
     try{
 
     console.log(":::::req.body.acc::::::" + req.body.acc);
@@ -115,7 +115,7 @@ router.post('/', isLoggedIn, upload.none('image'), async(req, res, next) => {
      
       if(req.body.image){
         console.log("::::::::게시글 등록 이미지:::::::" + req.body.image);
-        const image = await Image.create({src: req.body.image[0]});
+        const image = await Image.create({src: req.body.image});
         await post.addImages(image);
       }
       const fullPost = await Post.findOne({
