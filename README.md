@@ -1,5 +1,4 @@
 # My-Projects
-It is a repository that summarizes the projects that have been carried out while completing the state funding process.
 
 # First Project
 First Project는 리액트를 이용하여 HTML 템플릿 E-Commerce 홈페이지의 기능 구현을 진행하였습니다.
