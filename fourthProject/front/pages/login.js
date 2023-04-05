@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Card, Checkbox, Form, Input, Col, Modal, Table } from 'antd';
+import { Button, Card, Checkbox, Form, Input, Col, Modal, Table, Tooltip } from 'antd';
 import { useDispatch, useSelector } from "react-redux";
 import useInput from '../hooks/useInput';
 import { loginRequestAction } from "../reducers/user";
@@ -123,7 +123,8 @@ const Login = () => {
         <Col className="col1">
        <Tooltip title="공용계정 ID/PW"><FontAwesomeIcon onClick={modal} className="icon" icon={faKey} fontSize={20}/></Tooltip> 
         <Modal title="공용계정 ID/PW" footer={null} onCancel={handleCancel} open={isModalOpen}>
-          <Table pagination={false} columns={columns} dataSource={data}></Table>
+          <Table
+           pagination={false} columns={columns} dataSource={data}></Table>
         </Modal>
         <h1 >Log in </h1> 
         <Form
