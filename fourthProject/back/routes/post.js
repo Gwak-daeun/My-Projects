@@ -76,7 +76,7 @@ router.post('/checkDate', isLoggedIn, upload.none(), async(req, res, next) => {
 });
 
 //게시글 등록
-router.post('/', isLoggedIn, upload.array('image'), async(req, res, next) => {
+router.post('/', isLoggedIn, upload.none('image'), async(req, res, next) => {
     try{
 
     console.log(":::::req.body.acc::::::" + req.body.acc);
