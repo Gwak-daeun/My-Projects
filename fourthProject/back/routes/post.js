@@ -115,7 +115,7 @@ router.post('/', isLoggedIn, upload.none('image'), async(req, res, next) => {
      
       if(req.body.image){
         console.log("::::::::게시글 등록 이미지:::::::" + req.body.image);
-        const image = await Image.create({src: req.body.image});
+        const image = await Image.create({src: req.body.image[0]});
         await post.addImages(image);
       }
       const fullPost = await Post.findOne({
