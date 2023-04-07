@@ -138,11 +138,11 @@ const Login = () => {
     useEffect(() => {
       setTimeout(() => {
         setIsLoading(false);
-      }, 3000);
+      }, 500);
     }, []);
     
     if (isLoading) {
-      return <Card className="card2"><Spin className="spin" /></Card>;
+      return <OneLogin><Card className="card2"><Spin className="spin" /></Card></OneLogin>;
     }
 
     return(
