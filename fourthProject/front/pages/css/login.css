@@ -29,3 +29,16 @@
     background-size: contain;
     background-repeat: no-repeat;
   }
+
+  .card2{
+    width: 60%;
+    margin: auto;
+    margin-top: 300px;
+    margin-bottom: 300px;
+    text-align: center;
+    height: 359px;
+  }
+
+  .spin{
+    margin-top: 55%;
+  }

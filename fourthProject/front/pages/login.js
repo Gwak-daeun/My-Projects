@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Card, Form, Input, Col, Modal, Table, Tooltip } from 'antd';
+import { Button, Card, Form, Input, Col, Modal, Table, Tooltip, Spin } from 'antd';
 import { useDispatch, useSelector } from "react-redux";
 import useInput from '../hooks/useInput';
 import { loginRequestAction } from "../reducers/user";
@@ -17,6 +17,7 @@ const Login = () => {
   const [nickname, onChangeNickname] = useInput('');
   const [password, onChangePassword] = useInput('');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const columns = [
     {
       title: 'ID',
@@ -82,6 +83,16 @@ const Login = () => {
     const handleCancel = () => {
       setIsModalOpen(false);
     };
+
+    useEffect(() => {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 300);
+    }, []);
+    
+    if (isLoading) {
+      return <Card className="card2"><Spin className="spin" /></Card>;
+    }
 
     return(
       <Card className="card1">
