@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Card, Checkbox, Form, Input, Col, Modal, Table, Tooltip } from 'antd';
+import { Button, Card, Checkbox, Form, Input, Col, Modal, Table, Tooltip, Spin } from 'antd';
 import { useDispatch, useSelector } from "react-redux";
 import useInput from '../hooks/useInput';
 import { loginRequestAction } from "../reducers/user";
@@ -49,7 +49,7 @@ const OneLogin = styled.div`
 const Login = () => {
 
   const dispatch = useDispatch();
-  const {loginLoading, logInError, logInDone} = useSelector((state) => state.user);
+  const {loginLoading, logInError, logInDone, loadMyInfoLoading} = useSelector((state) => state.user);
   const [nickname, onChangeNickname] = useInput('');
   const [password, onChangePassword] = useInput('');
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -101,6 +101,14 @@ const Login = () => {
         Router.replace('/');
       }
   }, [logInError, logInDone]);
+
+  useEffect(() => {
+    if(loadMyInfoLoading){
+      return(
+        <Spin />
+      );
+    }
+  });
 
   // const style = useMemo(() => ({marginTop: 10}), []);
 
