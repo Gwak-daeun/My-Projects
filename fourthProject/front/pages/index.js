@@ -7,19 +7,10 @@ import Profile from './profile';
 import wrapper from '../store/configureStore';
 import axios from 'axios';
 import { END } from 'redux-saga';
-import { Spin } from 'antd';
 
 const Home = () => {
 
-    const {me, loadMyInfoLoading} = useSelector((state) => state.user);
-
-    useEffect(() => {
-        if(loadMyInfoLoading){
-          return(
-            <Spin />
-          );
-        }
-      });
+    const {me} = useSelector((state) => state.user);
 
 return (
     <AppLayout>

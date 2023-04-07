@@ -123,7 +123,7 @@ const Login = () => {
       <OneLogin>
       <Card className="card1">
         <Col className="col1">
-       <Tooltip title="공용계정 ID/PW"><FontAwesomeIcon onClick={modal} className="icon" icon={faKey} fontSize={20}/></Tooltip> 
+       <Tooltip title="공용계정 ID/PW"><FontAwesomeIcon onClick={modal} className="icon" icon={faKey} style={{ fontSize: '20px' }}/></Tooltip> 
         <Modal title="공용계정 ID/PW" footer={null} onCancel={handleCancel} open={isModalOpen}>
           <Table
            pagination={false} columns={columns} dataSource={data}></Table>
