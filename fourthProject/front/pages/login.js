@@ -46,12 +46,12 @@ const OneLogin = styled.div`
 }
 
 .card2{
-  /* width: 60%;
+  width: 60%;
   margin: auto;
   margin-top: 300px;
   margin-bottom: 300px;
   text-align: center;
-  height: 359px; */
+  height: 359px; 
 }
 
 .spin{
@@ -138,7 +138,7 @@ const Login = () => {
     useEffect(() => {
       setTimeout(() => {
         setIsLoading(false);
-      }, 300);
+      }, 3000);
     }, []);
     
     if (isLoading) {
