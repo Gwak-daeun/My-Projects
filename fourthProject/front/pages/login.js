@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Card, Form, Input, Col, Modal, Table, Tooltip, Spin } from 'antd';
+import { Button, Card, Form, Input, Col, Modal, Table, Tooltip } from 'antd';
 import { useDispatch, useSelector } from "react-redux";
 import useInput from '../hooks/useInput';
 import { loginRequestAction } from "../reducers/user";
@@ -17,7 +17,6 @@ const Login = () => {
   const [nickname, onChangeNickname] = useInput('');
   const [password, onChangePassword] = useInput('');
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
   const columns = [
     {
       title: 'ID',
@@ -58,17 +57,6 @@ const Login = () => {
     }
   ];
 
-  
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-  }, []);
-
-  if (isLoading) {
-    return <div><Spin /></div>;
-  }
-
   useEffect(() => {
       if(logInError){
           alert(logInError);
@@ -77,7 +65,6 @@ const Login = () => {
         Router.replace('/');
       }
   }, [logInError, logInDone]);
-
 
 
   // const style = useMemo(() => ({marginTop: 10}), []);
