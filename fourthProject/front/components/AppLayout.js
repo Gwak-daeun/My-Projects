@@ -99,7 +99,7 @@ const AppLayout = ({children}) => {
                 <Descriptions title="Info">
                     <Descriptions.Item label="개발자">곽다은</Descriptions.Item>
                     <Descriptions.Item label="연락처">010 - 3384 - 2874</Descriptions.Item>
-                    <Descriptions.Item label="Git-Hub"><a target='_blank' href="https://github.com/Gwak-daeun/fashionary.git">Source code</a></Descriptions.Item>
+                    <Descriptions.Item label="Git-Hub"><a target='_blank' href="https://github.com/Gwak-daeun/My-Projects/tree/main/fourthProject">Source code</a></Descriptions.Item>
                     <Descriptions.Item label="이력서"><a target='_blank' href="https://knowing-yogurt-cd2.notion.site/3dbeb300ba74486689474100d5c98971">개발자의 Notion</a></Descriptions.Item>
                     <Descriptions.Item label="포트폴리오"><a target='_blank' href="https://gwak-daeun.github.io/dist/index.html">개발자의 포트폴리오 사이트</a></Descriptions.Item>
                 </Descriptions>
