@@ -41,6 +41,7 @@ const OneLogin = styled.div`
   right: 0;
   background-size: contain;
   background-repeat: no-repeat;
+  font-size: 20px;
 }
 
 `;
