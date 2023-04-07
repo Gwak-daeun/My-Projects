@@ -4,7 +4,7 @@ import Head from 'next/head';
 import wrapper from "../store/configureStore";
 import '../pages/css/calendar.css';
 import'../pages/css/applayout.css';
-
+import '../pages/css/login.css';
 const  Fashionary= ({Component}) => {
 
     return(

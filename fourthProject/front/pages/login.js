@@ -9,42 +9,6 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faKey } from "@fortawesome/free-solid-svg-icons";
 
-const OneLogin = styled.div`
-
-.card1{
-  width: 60%;
-  margin: auto;
-  margin-top: 300px;
-  margin-bottom: 300px;
-}
-.login-form{
-  width: 50%;
-  margin: auto;
-  padding-top: 30px;
-}
-.login-form-button{
-  background-color: black;
-  color: white;
-}
-.a1{
-  color: black;
-}
-.col1{
-  text-align : center;
-  position: relative;
-}
-
-.icon{
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-size: contain;
-  background-repeat: no-repeat;
-  font-size: 20px;
-}
-
-`;
 
 const Login = () => {
 
@@ -120,7 +84,6 @@ const Login = () => {
     };
 
     return(
-      <OneLogin>
       <Card className="card1">
         <Col className="col1">
        <Tooltip title="공용계정 ID/PW"><FontAwesomeIcon onClick={modal} className="icon" icon={faKey} style={{ fontSize: '20px' }}/></Tooltip> 
@@ -164,7 +127,6 @@ const Login = () => {
         </Form>
         </Col>
       </Card>
-    </OneLogin>
     );
 
 }
