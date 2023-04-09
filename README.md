@@ -13,4 +13,5 @@ react와 spring을 이용하여 웹 프로젝트를 만들었습니다.
 react와 redux, redux-reducer 및 saga, sequelize, node.js를 사용하였습니다.
 Third Project에서 발견된 단점들을 보완하고 사용하는 언어와 백의 구조를 새롭게 디자인하여 프로젝트의 효율성과 성능을 향상시켰습니다.
 
+
 프로젝트에 대한 자세한 소개는 [여기](https://knowing-yogurt-cd2.notion.site/db349b136dc04ca0af1da72e4d3bb854?v=5a2c1ba92a0344a89e9ddc7a107d72e2)를 방문해주세요.
